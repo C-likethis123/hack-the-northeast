@@ -12,14 +12,6 @@ code {
     monospace;
 }
 
-footer {
-  font: Roboto;
-  font-size: 18px;
-  padding-left: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
 .title {
   font-family: Roboto;
   font-style: normal;
