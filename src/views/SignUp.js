@@ -14,43 +14,48 @@ export default function SignUp() {
   return (
     <Box className={classes.root}>
       <Box className={classes.container}>
-        <Typography variant="h1" color="secondary">Welcome Back!</Typography>
-        <Typography variant="body2">Find the perfect internship for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec massa augue. Proin aliquam lorem nisi, vitae fermentum tortor posuere id. Mauris interdum ac est id ultrices. </Typography>
-        <Button className={classes.button} variant="contained" color="secondary">
-          <Link to="/login">
-            Sign In</Link>
-        </Button>
+        <Box className={classes.text}>
+          <Typography variant="h1" color="secondary">Welcome Back!</Typography>
+          <Typography variant="body2">Find the perfect internship for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec massa augue. Proin aliquam lorem nisi, vitae fermentum tortor posuere id. Mauris interdum ac est id ultrices. </Typography>
+          <Button className={classes.button} variant="contained" color="secondary">
+            <Link to="/login">
+              Sign In</Link>
+          </Button>
+        </Box>
+
       </Box>
       <Box className={classes.container}>
-        <Typography variant="h1" color="primary">Create Account</Typography>
-        <form>
-          <FilledInput
-            className={classes.input}
-            onChange={changeUsername}
-            value={username}
-            placeholder="Username"
-            disableUnderline
-            fullWidth
-          />
-          <FilledInput
-            className={classes.input}
-            onChange={changePassword}
-            value={password}
-            type="password"
-            placeholder="Password"
-            disableUnderline
-            fullWidth
-          />
-          <FilledInput
-            className={classes.input}
-            onChange={changeEmail}
-            value={email}
-            placeholder="Email"
-            disableUnderline
-            fullWidth
-          />
-          <Button className={classes.button} variant="contained" color="primary">Sign Up</Button>
-        </form>
+        <Box className={classes.text}>
+          <Typography variant="h1" color="primary">Create Account</Typography>
+          <form>
+            <FilledInput
+              className={classes.input}
+              onChange={changeUsername}
+              value={username}
+              placeholder="Username"
+              disableUnderline
+              fullWidth
+            />
+            <FilledInput
+              className={classes.input}
+              onChange={changePassword}
+              value={password}
+              type="password"
+              placeholder="Password"
+              disableUnderline
+              fullWidth
+            />
+            <FilledInput
+              className={classes.input}
+              onChange={changeEmail}
+              value={email}
+              placeholder="Email"
+              disableUnderline
+              fullWidth
+            />
+            <Button className={classes.button} variant="contained" color="primary">Sign Up</Button>
+          </form>
+        </Box>
       </Box>
     </Box>
   )
@@ -69,7 +74,11 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     width: '50%',
+    height: '100%',
     padding: '0rem 3.25rem',
+  },
+  text: {
+    padding: '10rem 0rem',
   },
   button: {
     padding: '0.53125rem 2.4375rem',
