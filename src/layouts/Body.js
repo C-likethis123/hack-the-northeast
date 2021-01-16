@@ -6,7 +6,7 @@ import { useState } from 'react';
 import GuardedRoute from 'react-guarded-route';
 
 export default function Body() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   const authenticate = () => setIsAuthenticated(true);
 
