@@ -4,11 +4,14 @@ import { Body, Footer, Header } from './layouts';
 
 function App() {
   return (
-    <Container>
+    <div>
       <Header />
-      <Body />
-      <Footer />
-    </Container>
+      <div style= {{height:"1000px", display: "flex", flexDirection:"column", justifyContent: "space-between"}}>
+        <Body />
+        <Footer />
+      </div>
+      
+    </div>
   );
 }
 
