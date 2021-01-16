@@ -4,7 +4,7 @@ import GoogleImage from "./images/google.svg";
 import FacebookImage from "./images/facebook.svg";
 
 
-export default function Dashboard() {
+export default function DashboardIntern() {
   var jobList = [
     {name:"Google", image:GoogleImage, skills:"React, Figma, Vue"},
     {name:"Facebook", image:FacebookImage, skills:"Marketing, Finance"}
