@@ -12,12 +12,12 @@ import { FilledInput } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AddIcon from '@material-ui/icons/Add';
 
-export default function SkillsItem(props) {
+export default function PreferencesItem(props) {
   const classes = useStyles();
-  const skills = {recommendedSkills:["Adobe Illustrator", "Adobe XD", "Teamwork", "Leadership", "Project Manager"], technicalSkills: ["Microsoft Office", "Python", "Photoshop", "JavaScript", "React", "Premiere Pro"], softSkills: ["Communication", "Organisation"]}
-  const [skillInput, setSkillInput] = useState("");
+  const skills = {recommendedSkills:["Product Design", "Front End Development", "Education", "UI/UX", "Game Developer"], selectedSkills: ["User Experience", "Robotics", "Children", "IT"]}
+  const [preferenceInput, setpreferenceInput] = useState("");
 
-  const changeSkillInput = (event) => setSkillInput(event.target.value);
+  const changepreferenceInput = (event) => setpreferenceInput(event.target.value);
 
   return (
     <div className="orangeBox">
@@ -27,7 +27,7 @@ export default function SkillsItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>1. SKILLS- Show off your abilities to your employers!</Typography>
+          <Typography>3. PREFERENCES- What kind of jobs are you looking for?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
@@ -36,9 +36,9 @@ export default function SkillsItem(props) {
                 
                 <FilledInput
                   className={classes.input}
-                  onChange={changeSkillInput}
-                  value={skillInput}
-                  placeholder="Microsoft Office, Python, Teamwork..."
+                  onChange={changepreferenceInput}
+                  value={preferenceInput}
+                  placeholder="Information System, Finance, Environment..."
                   disableUnderline
                   fullWidth
                   startAdornment={
@@ -54,18 +54,11 @@ export default function SkillsItem(props) {
               {skills.recommendedSkills.map(
               (skill) => <SkillItem style = {classes.greyChipStyle} icon = {<AddIcon/>} skill = {skill}/>)}
             </div>
-            
-            <Typography>Technical Skills</Typography>
 
+            <Typography>We will try to match you with your ideal jobs!</Typography>
             <div>
-              {skills.technicalSkills.map(
+              {skills.selectedSkills.map(
               (skill) => <SkillItem style = {classes.blueChipStyle} skill = {skill}/>)}
-            </div>
-
-            <Typography>Soft Skills</Typography>
-            <div>
-              {skills.softSkills.map(
-              (skill) => <SkillItem style = {classes.orangeChipStyle} skill = {skill}/>)}
             </div>
 
           </div>

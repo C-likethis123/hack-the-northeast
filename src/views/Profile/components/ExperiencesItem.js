@@ -11,13 +11,35 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import { FilledInput } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AddIcon from '@material-ui/icons/Add';
+import Select from 'react-select';
 
-export default function SkillsItem(props) {
+const options = [
+  { value: 'fulltime', label: 'Full-Time' },
+  { value: 'parttime', label: 'Part-Time' },
+  { value: 'selfemployed', label: 'Self-employed' },
+  { value: 'freelance', label: 'Freelance' },
+  { value: 'contract', label: 'Contract' },
+  { value: 'internship', label: 'Internship' },
+  { value: 'apprenticeship', label: 'Apprenticeship' },
+];
+
+
+export default function ExperiencesItem(props) {
   const classes = useStyles();
-  const skills = {recommendedSkills:["Adobe Illustrator", "Adobe XD", "Teamwork", "Leadership", "Project Manager"], technicalSkills: ["Microsoft Office", "Python", "Photoshop", "JavaScript", "React", "Premiere Pro"], softSkills: ["Communication", "Organisation"]}
-  const [skillInput, setSkillInput] = useState("");
+  const [companyInput, setCompanyInput] = useState("");
+  const [jobInput, setJobInput] = useState("");
+  const [employmentInput, setEmploymentInput] = useState("");
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const changeSkillInput = (event) => setSkillInput(event.target.value);
+  const changeCompanyInput = (event) => setCompanyInput(event.target.value);
+  const changeJobInput = (event) => setJobInput(event.target.value);
+  const changeEmploymentInput = (event) => setEmploymentInput(event.target.value);
+
+  const pickRange = React.createRef();
+
+  const handleRangeChange = () => {console.log("hi")};
+  const handleRangeDissmis = () => {console.log("hi2")};
+
 
   return (
     <div className="orangeBox">
@@ -27,45 +49,48 @@ export default function SkillsItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>1. SKILLS- Show off your abilities to your employers!</Typography>
+          <Typography>2. EXPERIENCES- What have you been doing before this?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
             <div>
               <form>
-                
+                <Typography>Current/Most recent employer</Typography>
                 <FilledInput
                   className={classes.input}
-                  onChange={changeSkillInput}
-                  value={skillInput}
-                  placeholder="Microsoft Office, Python, Teamwork..."
+                  onChange={changeCompanyInput}
+                  value={companyInput}
+                  placeholder="Company"
                   disableUnderline
                   fullWidth
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  }
                 />
+                <FilledInput
+                  className={classes.input}
+                  onChange={changeJobInput}
+                  value={jobInput}
+                  placeholder="Job Title"
+                  disableUnderline
+                  fullWidth
+                />
+                <FilledInput
+                  className={classes.input}
+                  onChange={changeEmploymentInput}
+                  value={employmentInput}
+                  placeholder="Employment Type"
+                  disableUnderline
+                  fullWidth
+                />
+
+                <Select
+                  defaultValue={selectedOption}
+                  onChange={setSelectedOption}
+                  options={options}
+                />
+                <input type="date" />
+                <input type="date" />
+
+
               </form>
-            </div>
-
-            <div>
-              {skills.recommendedSkills.map(
-              (skill) => <SkillItem style = {classes.greyChipStyle} icon = {<AddIcon/>} skill = {skill}/>)}
-            </div>
-            
-            <Typography>Technical Skills</Typography>
-
-            <div>
-              {skills.technicalSkills.map(
-              (skill) => <SkillItem style = {classes.blueChipStyle} skill = {skill}/>)}
-            </div>
-
-            <Typography>Soft Skills</Typography>
-            <div>
-              {skills.softSkills.map(
-              (skill) => <SkillItem style = {classes.orangeChipStyle} skill = {skill}/>)}
             </div>
 
           </div>
