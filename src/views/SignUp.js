@@ -59,6 +59,9 @@ export default function SignUp() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    height: '100%',
+    justifyContent: "center",
+    alignItems: "center",
     textAlign: "center",
     '& > :first-child': {
       backgroundColor: theme.palette.primary.main,
