@@ -1,4 +1,5 @@
 import React from 'react'
+import SkillItem from './SkillItem'
 
 export default function JobListItem(props) {
 
@@ -11,7 +12,11 @@ export default function JobListItem(props) {
             <img src = {props.image} width = "100px"></img>
         </div>
         <div>
-            {props.skills}
+            {props.skills.technicalSkills.map(
+            (skill) => <SkillItem skill = {skill}/>)}
+
+            {props.skills.softSkills.map(
+            (skill) => <SkillItem skill = {skill}/>)}
         </div>
     </div>
   )

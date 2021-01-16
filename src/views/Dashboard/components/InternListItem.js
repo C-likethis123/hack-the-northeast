@@ -1,4 +1,5 @@
 import React from 'react'
+import SkillItem from './SkillItem'
 
 export default function InternListItem(props) {
 
@@ -10,8 +11,13 @@ export default function InternListItem(props) {
         <div>
             <img src = {props.image} width = "100px"></img>
         </div>
-        <div>
-            {props.skills}
+        <div style={{display:"flex"}}>
+            {props.skills.technicalSkills.map(
+            (skill) => <SkillItem skill = {skill}/>)}
+        
+            {props.skills.softSkills.map(
+            (skill) => <SkillItem skill = {skill}/>)}
+
         </div>
     </div>
   )

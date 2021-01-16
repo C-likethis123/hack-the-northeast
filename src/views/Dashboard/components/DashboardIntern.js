@@ -6,8 +6,8 @@ import FacebookImage from "./images/facebook.svg";
 
 export default function DashboardIntern() {
   var jobList = [
-    {name:"Google", image:GoogleImage, skills:"React, Figma, Vue"},
-    {name:"Facebook", image:FacebookImage, skills:"Marketing, Finance"}
+    {name:"Google", image:GoogleImage, skills:{ technicalSkills: ["React", "HTML", "Figma"], softSkills: ["Communication"] }},
+    {name:"Facebook", image:FacebookImage, skills:{ technicalSkills: ["Marketing", "Finance"], softSkills: ["Organisation"] }}
   ]
 
   return (

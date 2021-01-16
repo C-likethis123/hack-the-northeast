@@ -6,8 +6,8 @@ import DogImage from "./images/dog.svg";
 
 export default function DashboardIntern() {
   var internList = [
-    {name:"Joe", image:CatImage, skills:"React, Vue"},
-    {name:"Jane", image:DogImage, skills:"Marketing, Finance, Blockchain"}
+    {name:"Joe", image:CatImage, skills:{ technicalSkills: ["React", "HTML"], softSkills: ["Communication"] }},
+    {name:"Jane", image:DogImage, skills:{ technicalSkills: ["Marketing", "Finance", "Blockchain"], softSkills: ["Organisation"] }}
   ]
 
   return (
