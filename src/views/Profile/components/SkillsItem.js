@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SkillItem from './SkillItem'
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -8,76 +8,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-
-
-const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
-}));
-
+import { FilledInput } from '@material-ui/core';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 export default function SkillsItem(props) {
   const classes = useStyles();
   const skills = {technicalSkills: ["Marketing", "Finance"], softSkills: ["Organisation"]}
+  const [skillInput, setSkillInput] = useState("");
+
+  const changeSkillInput = (event) => setSkillInput(event.target.value);
 
   return (
     <div>
@@ -90,19 +29,24 @@ export default function SkillsItem(props) {
           <Typography>1. SKILLS- Show off your abilities to your employers!</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div style={{display:"flex", flexDirection:"column"}}>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
+          <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
+            <div>
+              <form>
+                
+                <FilledInput
+                  className={classes.input}
+                  onChange={changeSkillInput}
+                  value={skillInput}
+                  placeholder="Microsoft Office, Python, Teamwork..."
+                  disableUnderline
+                  fullWidth
+                  startAdornment={
+                    <InputAdornment position="start">
+                      <SearchIcon />
+                    </InputAdornment>
+                  }
+                />
+              </form>
             </div>
             
             <Typography>Technical Skills</Typography>
@@ -124,5 +68,34 @@ export default function SkillsItem(props) {
 
     </div>
   )
+
 }
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    textAlign: "center",
+    '& > :first-child': {
+      backgroundColor: theme.palette.primary.main,
+    },
+  },
+  button: {
+    padding: '0.53125rem 2.4375rem',
+    borderRadius: '100px',
+  },
+  input: {
+    width: '100%',
+    border: '2px solid #E5E5E5',
+    backgroundColor: 'unset',
+    boxShadow: '0 2px 2px 0 rgba(0,0,0,0.05)',
+    marginBottom: '0.5625rem',
+    '&:hover,.Mui-focused': {
+      backgroundColor: 'unset',
+    },
+    '& .MuiFilledInput-input': {
+      padding: '0.5rem 0.75rem',
+    },
+  },
+}));
 

@@ -7,6 +7,7 @@ export default function SkillItem(props) {
 
   return (
     <Chip
+      variant="outlined"
       style = {{"margin": "2px"}}
       size="small"
       color="primary"
