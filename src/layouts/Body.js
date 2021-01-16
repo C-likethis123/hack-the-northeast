@@ -7,12 +7,15 @@ import GuardedRoute from 'react-guarded-route';
 
 export default function Body() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const authenticate = () => setIsAuthenticated(true);
+
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/test" component={Test} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={props => <Login authenticate={authenticate} />} />
         <GuardedRoute
           path="/dashboard"
           component={Dashboard}
