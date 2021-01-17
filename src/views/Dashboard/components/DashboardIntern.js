@@ -16,8 +16,8 @@ export default function DashboardIntern() {
     },
     {
       name: "Facebook",
-      jobTitle: "Marketing Executive",
-      jobDescription: "As a Marketing Executive, you will plan and lead marketing campaigns for Facebook product launches",
+      jobTitle: "Marketing Intern",
+      jobDescription: "As a Marketing Intern, you will assist our marketing team to plan and lead marketing campaigns for Facebook product launches. Applicants should have prior experience in marketing, be it through academic or work experience. They should also be familiar with concepts such as branding and SEO.",
       image: FacebookImage, skills: { technicalSkills: ["Marketing", "Finance"], softSkills: ["Organisation"] }
     }
   ]
