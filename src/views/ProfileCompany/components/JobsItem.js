@@ -324,6 +324,7 @@ const requiredSkills = [
   { title: 'Python', type: 'requiredSkill' },
   { title: 'C Language', type: 'requiredSkill' },
   { title: 'JavaScript', type: 'requiredSkill' },
+  { title: 'HTML', type: 'requiredSkill' },
   { title: 'React', type: 'requiredSkill' },
   { title: 'Communication', type: 'requiredSkill' }
 ];
@@ -333,4 +334,5 @@ const preferredSkills = [
   { title: 'Photoshop', type: 'preferredSkill' },
   { title: 'Premiere Pro', type: 'preferredSkill' },
   { title: 'Teamwork', type: 'preferredSkill' },
+  { title: 'Figma', type: 'preferredSkill' },
 ];

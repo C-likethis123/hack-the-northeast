@@ -19,6 +19,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 const options = [
   { value: 'Agriculture', label: 'Agriculture' },
+  { value: 'Technology', label: 'Technology' },
   { value: 'Automotive', label: 'Automotive' },
   { value: 'Business Services', label: 'Business Services' },
   { value: 'Construction', label: 'Construction' },
@@ -57,7 +58,7 @@ export default function ProfilesItem(props) {
     setCompanyCheckedStatus(newStatus);
   };
 
-  
+
   return (
     <div className="orangeBox">
       <Accordion>
@@ -69,7 +70,7 @@ export default function ProfilesItem(props) {
           <Typography variant="h3">1. PROFILE- Some basic information</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
+          <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
             <FilledInput
               className={classes.input}
               onChange={changeCompanyInput}
@@ -82,31 +83,31 @@ export default function ProfilesItem(props) {
             <div>
               <div>
                 <Autocomplete
-                    {...defaultProps}
-                    id="industry"
-                    autoComplete
-                    fullWidth
-                    includeInputInList
-                    renderInput={(params) => <TextField {...params} label="Industry"/>}
-                  />
+                  {...defaultProps}
+                  id="industry"
+                  autoComplete
+                  fullWidth
+                  includeInputInList
+                  renderInput={(params) => <TextField {...params} label="Industry" />}
+                />
               </div>
             </div>
 
-            <div style = {{marginTop: "30px"}}>
-              <Typography variant= "body3">What type of company are you?</Typography>
+            <div style={{ marginTop: "30px" }}>
+              <Typography variant="body3">What type of company are you?</Typography>
 
-              <div style = {{marginTop: "10px", marginLeft: "8px"}}>
+              <div style={{ marginTop: "10px", marginLeft: "8px" }}>
                 {Object.keys(defaultCompanyCheckedStatus).map((value) => {
                   return <FormControlLabel
-                  control={<Checkbox 
-                    style = {{border: "20px"}}
-                    className={classes.checkbox} 
-                    checked={companyCheckedStatus[value]} onChange={handleChangeCompany} name={value} />}
-                  label={<Typography variant= "body3">{value}</Typography>}
-                />
-              })}
+                    control={<Checkbox
+                      style={{ border: "20px" }}
+                      className={classes.checkbox}
+                      checked={companyCheckedStatus[value]} onChange={handleChangeCompany} name={value} />}
+                    label={<Typography variant="body3">{value}</Typography>}
+                  />
+                })}
               </div>
-            
+
             </div>
 
           </div>

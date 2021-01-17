@@ -139,5 +139,7 @@ const skills = [
   { title: 'Teamwork', type: 'soft' },
   { title: 'Project Manager', type: 'soft' },
   { title: 'Communication', type: 'soft' },
+  { title: 'HTML', type: 'technical' },
+  { title: 'Figma', type: 'technical' },
   { title: 'Organisation', type: 'soft' },
 ];
