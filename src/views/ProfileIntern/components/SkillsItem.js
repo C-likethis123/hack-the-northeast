@@ -29,13 +29,12 @@ export default function SkillsItem(props) {
           <Typography variant="h3">2. SKILLS- Show off your abilities to your employers!</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
+          <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
             <BlueAutoComplete
               multiple
               id="tags-standard"
               options={skills}
               getOptionLabel={(option) => option.title}
-              defaultValue={[skills[0]]}
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -106,7 +105,7 @@ const BlueAutoComplete = withStyles({
     height: 24,
     position: "relative",
     zIndex: 0,
-    
+
     "& .MuiChip-label": {
       color: "#fff"
     },
@@ -134,6 +133,7 @@ const skills = [
   { title: 'Photoshop', type: 'technical' },
   { title: 'JavaScript', type: 'technical' },
   { title: 'React', type: 'technical' },
+  { title: 'HTML', type: 'technical' },
   { title: 'Premiere Pro', type: 'technical' },
   { title: 'Teamwork', type: 'soft' },
   { title: 'Project Manager', type: 'soft' },

@@ -72,12 +72,12 @@ export default function JobsItem(props) {
           <Typography variant="h3">4. JOB OPENINGS- What kind of interns are you looking for?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
+          <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
             <div>
               <form>
                 <Typography>First Job Position</Typography>
                 <FilledInput
-                  style = {{marginTop: "10px"}}
+                  style={{ marginTop: "10px" }}
                   className={classes.input}
                   onChange={changeJobInput}
                   value={jobInput}
@@ -86,7 +86,7 @@ export default function JobsItem(props) {
                   fullWidth
                 />
                 <FilledInput
-                  style = {{marginTop: "10px"}}
+                  style={{ marginTop: "10px" }}
                   className={classes.input}
                   onChange={changeDepartmentInput}
                   value={departmentInput}
@@ -95,19 +95,19 @@ export default function JobsItem(props) {
                   fullWidth
                 />
 
-                <div style = {{marginTop: "30px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
-                  <div style = {{width:"100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
-                    <Typography style={{marginRight: "10px"}}>From </Typography>
-                    <input style={{width:"50%", fontSize: "1.0rem"}} type="date" />
+                <div style={{ marginTop: "30px", display: "flex", flexDirection: "row", justifyContent: "flex-start" }}>
+                  <div style={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "flex-start" }}>
+                    <Typography style={{ marginRight: "10px" }}>From </Typography>
+                    <input style={{ width: "50%", fontSize: "1.0rem" }} type="date" />
                   </div>
-                  <div style = {{width:"100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
-                    <Typography style={{marginRight: "10px"}}>To</Typography>
-                    <input style={{width:"50%", fontSize: "1.0rem"}} type="date" />
+                  <div style={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "flex-start" }}>
+                    <Typography style={{ marginRight: "10px" }}>To</Typography>
+                    <input style={{ width: "50%", fontSize: "1.0rem" }} type="date" />
                   </div>
                 </div>
 
                 <FilledInput
-                  style = {{marginTop: "30px"}}
+                  style={{ marginTop: "30px" }}
                   className={classes.inputDescription}
                   onChange={changeDescriptionInput}
                   value={descriptionInput}
@@ -119,64 +119,62 @@ export default function JobsItem(props) {
 
                 <div>
                   <BlueAutoComplete
-                      style = {{marginTop: "30px"}}
-                      multiple
-                      id="tags-standard"
-                      options={requiredSkills}
-                      getOptionLabel={(option) => option.title}
-                      defaultValue={[requiredSkills[0]]}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          variant="standard"
-                          label="REQUIRED Skills"
-                          placeholder="Microsoft Office, Python, C Language, JavaScript, React, Communication..."
-                        />
-                      )}
-                    />
+                    style={{ marginTop: "30px" }}
+                    multiple
+                    id="tags-standard"
+                    options={requiredSkills}
+                    getOptionLabel={(option) => option.title}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant="standard"
+                        label="REQUIRED Skills"
+                        placeholder="Microsoft Office, Python, C Language, JavaScript, React, Communication..."
+                      />
+                    )}
+                  />
                 </div>
 
                 <div>
                   <GreenAutoComplete
-                      style = {{marginTop: "30px"}}
-                      multiple
-                      id="tags-standard"
-                      options={preferredSkills}
-                      getOptionLabel={(option) => option.title}
-                      defaultValue={[preferredSkills[0]]}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          variant="standard"
-                          label="PREFERRED Skills"
-                          placeholder="Project Management, Photoshop..."
-                        />
-                      )}
-                    />
+                    style={{ marginTop: "30px" }}
+                    multiple
+                    id="tags-standard"
+                    options={preferredSkills}
+                    getOptionLabel={(option) => option.title}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        variant="standard"
+                        label="PREFERRED Skills"
+                        placeholder="Project Management, Photoshop..."
+                      />
+                    )}
+                  />
                 </div>
 
-                <div style = {{marginTop: "30px"}}>
-                  <Typography variant= "body3" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
+                <div style={{ marginTop: "30px" }}>
+                  <Typography variant="body3" style={{ marginTop: "10px" }}>What kind of work arrangement is ideal?</Typography>
 
-                  <div style = {{marginLeft: "8px"}}>
+                  <div style={{ marginLeft: "8px" }}>
                     {Object.keys(defaultWorkCheckedStatus).map((value) => {
                       return <FormControlLabel
-                      control={<Checkbox 
-                        style = {{border: "20px"}}
-                        className={classes.checkbox} 
-                        checked={workCheckedStatus[value]} onChange={handleChangeWork} name={value} />}
-                      label={<Typography variant= "body3">{value}</Typography>}
-                    />
-                  })}
+                        control={<Checkbox
+                          style={{ border: "20px" }}
+                          className={classes.checkbox}
+                          checked={workCheckedStatus[value]} onChange={handleChangeWork} name={value} />}
+                        label={<Typography variant="body3">{value}</Typography>}
+                      />
+                    })}
                   </div>
-                
+
                 </div>
 
-                <div style = {{marginTop: "30px"}}>
-                  <Typography variant= "body3" style = {{marginTop: "10px"}}>How many positions are available for this job?</Typography>
-                  
+                <div style={{ marginTop: "30px" }}>
+                  <Typography variant="body3" style={{ marginTop: "10px" }}>How many positions are available for this job?</Typography>
+
                   <FilledInput
-                    style = {{marginTop: "10px"}}
+                    style={{ marginTop: "10px" }}
                     className={classes.input}
                     onChange={changePositionInput}
                     value={positionInput}
@@ -185,8 +183,8 @@ export default function JobsItem(props) {
                     fullWidth
                   />
 
-                  
-                
+
+
                 </div>
 
               </form>
@@ -273,7 +271,7 @@ const BlueAutoComplete = withStyles({
     height: 24,
     position: "relative",
     zIndex: 0,
-    
+
     "& .MuiChip-label": {
       color: "#fff"
     },
@@ -301,7 +299,7 @@ const GreenAutoComplete = withStyles({
     height: 24,
     position: "relative",
     zIndex: 0,
-    
+
     "& .MuiChip-label": {
       color: "#fff"
     },

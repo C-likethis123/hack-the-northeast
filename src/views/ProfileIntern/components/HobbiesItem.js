@@ -31,16 +31,15 @@ export default function HobbiesItem(props) {
           <Typography variant="h3">5. Personality- More about yourself! (Optional)</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
+          <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
             <div>
-            <Typography variant= "body3" style = {{marginTop: "10px"}}>What are your hobbies? How do you spend your free time?</Typography>
+              <Typography variant="body3" style={{ marginTop: "10px" }}>What are your hobbies? How do you spend your free time?</Typography>
               <BlueAutoComplete
-                style = {{marginTop: "10px"}}
+                style={{ marginTop: "10px" }}
                 multiple
                 id="tags-standard"
                 options={hobbies}
                 getOptionLabel={(option) => option.title}
-                defaultValue={[hobbies[0]]}
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -52,15 +51,14 @@ export default function HobbiesItem(props) {
               />
             </div>
 
-            <div style = {{marginTop: "30px"}}>
-            <Typography variant= "body3" >How will your friends describe you?</Typography>
+            <div style={{ marginTop: "30px" }}>
+              <Typography variant="body3" >How will your friends describe you?</Typography>
               <BlueAutoComplete
-                style = {{marginTop: "10px"}}
+                style={{ marginTop: "10px" }}
                 multiple
                 id="tags-standard"
                 options={personalities}
                 getOptionLabel={(option) => option.title}
-                defaultValue={[personalities[0]]}
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -90,7 +88,7 @@ const BlueAutoComplete = withStyles({
     height: 24,
     position: "relative",
     zIndex: 0,
-    
+
     "& .MuiChip-label": {
       color: "#fff"
     },

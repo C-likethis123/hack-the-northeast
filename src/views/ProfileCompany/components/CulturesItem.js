@@ -40,7 +40,6 @@ export default function CulturesItem(props) {
                 id="tags-standard"
                 options={cultures}
                 getOptionLabel={(option) => option.title}
-                defaultValue={[cultures[0]]}
                 renderInput={(params) => (
                   <TextField
                     {...params}

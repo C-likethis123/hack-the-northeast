@@ -37,7 +37,6 @@ export default function ToolsItem(props) {
               id="tags-standard"
               options={skills}
               getOptionLabel={(option) => option.title}
-              defaultValue={[skills[0]]}
               renderInput={(params) => (
                 <TextField
                   {...params}
