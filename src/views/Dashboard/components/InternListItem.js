@@ -10,9 +10,9 @@ export default function InternListItem(props) {
     <Box className={classes.jobListingContainer} display="flex" width="100%">
       <Box className={classes.container} display="flex" flexDirection="column">
         <Box display="flex">
-          <Typography variant="h5">{props.name}</Typography>
+          <Typography className={`${classes.fontStyle} bold`}>{props.name}</Typography>
           &nbsp;
-          <Typography variant="body1">| {props.credentials}</Typography>
+          <Typography className={classes.fontStyle}>| {props.credentials}</Typography>
         </Box>
         <div className={classes.tagGroup}>
           <Typography variant="body2">Skills</Typography>
@@ -72,6 +72,12 @@ const useStyles = makeStyles((theme) => ({
     width: '70%',
     textAlign: 'left',
     boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.05)',
+  },
+  fontStyle: {
+    fontSize: '18px',
+    '&.bold': {
+      fontWeight: 'bold',
+    }
   },
   tagGroup: {
     paddingTop: '0.875rem',

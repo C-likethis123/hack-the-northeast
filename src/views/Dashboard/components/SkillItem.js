@@ -9,6 +9,7 @@ export default function SkillItem(props) {
       variant="outlined"
       size="small"
       label={props.skill}
+      clickable
     />
   )
 }
