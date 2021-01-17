@@ -38,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     border: `1px solid ${theme.palette.primary.main}`,
-    padding: '0.78125rem',
+    padding: '1.5625rem',
     borderRadius: '5px',
     boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.05)',
   },
   jobDetails: {
     textAlign: 'left',
-    padding: '0.625rem',
+    padding: '0 1.625rem',
   },
 }));
