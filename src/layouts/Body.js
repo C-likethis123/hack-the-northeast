@@ -11,7 +11,7 @@ export default function Body() {
   const authenticate = () => setIsAuthenticated(true);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" render={props => <Login authenticate={authenticate} />} />
