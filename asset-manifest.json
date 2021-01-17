@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/www.jobbox.space/static/css/main.e03c3a0a.chunk.css",
-    "main.js": "/www.jobbox.space/static/js/main.28b5575e.chunk.js",
-    "main.js.map": "/www.jobbox.space/static/js/main.28b5575e.chunk.js.map",
-    "runtime-main.js": "/www.jobbox.space/static/js/runtime-main.d2dc8522.js",
-    "runtime-main.js.map": "/www.jobbox.space/static/js/runtime-main.d2dc8522.js.map",
-    "static/css/2.83342f34.chunk.css": "/www.jobbox.space/static/css/2.83342f34.chunk.css",
-    "static/js/2.e7ed03e4.chunk.js": "/www.jobbox.space/static/js/2.e7ed03e4.chunk.js",
-    "static/js/2.e7ed03e4.chunk.js.map": "/www.jobbox.space/static/js/2.e7ed03e4.chunk.js.map",
-    "static/js/3.cfdd5dc2.chunk.js": "/www.jobbox.space/static/js/3.cfdd5dc2.chunk.js",
-    "static/js/3.cfdd5dc2.chunk.js.map": "/www.jobbox.space/static/js/3.cfdd5dc2.chunk.js.map",
-    "index.html": "/www.jobbox.space/index.html",
-    "static/css/2.83342f34.chunk.css.map": "/www.jobbox.space/static/css/2.83342f34.chunk.css.map",
-    "static/css/main.e03c3a0a.chunk.css.map": "/www.jobbox.space/static/css/main.e03c3a0a.chunk.css.map",
-    "static/js/2.e7ed03e4.chunk.js.LICENSE.txt": "/www.jobbox.space/static/js/2.e7ed03e4.chunk.js.LICENSE.txt",
-    "static/media/application.cb0e9349.svg": "/www.jobbox.space/static/media/application.cb0e9349.svg",
-    "static/media/apply.f87d5f7c.svg": "/www.jobbox.space/static/media/apply.f87d5f7c.svg",
-    "static/media/bookmark.d631e441.svg": "/www.jobbox.space/static/media/bookmark.d631e441.svg",
-    "static/media/facebook.71296914.svg": "/www.jobbox.space/static/media/facebook.71296914.svg",
-    "static/media/google.a4fa9b6f.svg": "/www.jobbox.space/static/media/google.a4fa9b6f.svg",
-    "static/media/invitation.bdc8132d.svg": "/www.jobbox.space/static/media/invitation.bdc8132d.svg"
+    "main.css": "/c-likethis123.github.io/hack-the-northeast/static/css/main.e03c3a0a.chunk.css",
+    "main.js": "/c-likethis123.github.io/hack-the-northeast/static/js/main.4aaec1f3.chunk.js",
+    "main.js.map": "/c-likethis123.github.io/hack-the-northeast/static/js/main.4aaec1f3.chunk.js.map",
+    "runtime-main.js": "/c-likethis123.github.io/hack-the-northeast/static/js/runtime-main.21f21324.js",
+    "runtime-main.js.map": "/c-likethis123.github.io/hack-the-northeast/static/js/runtime-main.21f21324.js.map",
+    "static/css/2.83342f34.chunk.css": "/c-likethis123.github.io/hack-the-northeast/static/css/2.83342f34.chunk.css",
+    "static/js/2.e7ed03e4.chunk.js": "/c-likethis123.github.io/hack-the-northeast/static/js/2.e7ed03e4.chunk.js",
+    "static/js/2.e7ed03e4.chunk.js.map": "/c-likethis123.github.io/hack-the-northeast/static/js/2.e7ed03e4.chunk.js.map",
+    "static/js/3.cfdd5dc2.chunk.js": "/c-likethis123.github.io/hack-the-northeast/static/js/3.cfdd5dc2.chunk.js",
+    "static/js/3.cfdd5dc2.chunk.js.map": "/c-likethis123.github.io/hack-the-northeast/static/js/3.cfdd5dc2.chunk.js.map",
+    "index.html": "/c-likethis123.github.io/hack-the-northeast/index.html",
+    "static/css/2.83342f34.chunk.css.map": "/c-likethis123.github.io/hack-the-northeast/static/css/2.83342f34.chunk.css.map",
+    "static/css/main.e03c3a0a.chunk.css.map": "/c-likethis123.github.io/hack-the-northeast/static/css/main.e03c3a0a.chunk.css.map",
+    "static/js/2.e7ed03e4.chunk.js.LICENSE.txt": "/c-likethis123.github.io/hack-the-northeast/static/js/2.e7ed03e4.chunk.js.LICENSE.txt",
+    "static/media/application.cb0e9349.svg": "/c-likethis123.github.io/hack-the-northeast/static/media/application.cb0e9349.svg",
+    "static/media/apply.f87d5f7c.svg": "/c-likethis123.github.io/hack-the-northeast/static/media/apply.f87d5f7c.svg",
+    "static/media/bookmark.d631e441.svg": "/c-likethis123.github.io/hack-the-northeast/static/media/bookmark.d631e441.svg",
+    "static/media/facebook.71296914.svg": "/c-likethis123.github.io/hack-the-northeast/static/media/facebook.71296914.svg",
+    "static/media/google.a4fa9b6f.svg": "/c-likethis123.github.io/hack-the-northeast/static/media/google.a4fa9b6f.svg",
+    "static/media/invitation.bdc8132d.svg": "/c-likethis123.github.io/hack-the-northeast/static/media/invitation.bdc8132d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2dc8522.js",
+    "static/js/runtime-main.21f21324.js",
     "static/css/2.83342f34.chunk.css",
     "static/js/2.e7ed03e4.chunk.js",
     "static/css/main.e03c3a0a.chunk.css",
-    "static/js/main.28b5575e.chunk.js"
+    "static/js/main.4aaec1f3.chunk.js"
   ]
 }
