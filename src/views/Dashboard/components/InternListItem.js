@@ -1,8 +1,8 @@
 import React from 'react'
 import SkillItem from './SkillItem'
-import { IconButton, Box, Typography, makeStyles } from "@material-ui/core";
-import Invitation from "./images/invitation.svg";
-import Application from "./images/application.svg";
+import { SvgIcon, IconButton, Box, Typography, makeStyles } from "@material-ui/core";
+import { ReactComponent as Invitation } from "./images/invitation.svg";
+import { ReactComponent as Application } from "./images/application.svg";
 
 export default function InternListItem(props) {
   const classes = useStyles();
@@ -38,18 +38,19 @@ export default function InternListItem(props) {
       </Box>
       {props.invited ? (
         <IconButton classes={{ root: classes.buttonRoot, label: classes.button }}>
-          <img src={Invitation} alt="Invite" />
+          <SvgIcon viewBox="0 0 58 58" component={Invitation} />
+
         Invite
         </IconButton>)
         : (
           <IconButton
             variant="contained"
             classes={{
-              root: `${classes.buttonRoot} actionButton`,
-              label: `${classes.button} actionButton`
+              root: classes.buttonRoot,
+              label: classes.button
             }}
           >
-            <img src={Application} alt="View Application" />
+            <SvgIcon viewBox="0 0 42 60" component={Application} />
             View Application
           </IconButton>
         )}
@@ -79,11 +80,6 @@ const useStyles = makeStyles((theme) => ({
     padding: 'unset',
     paddingLeft: '20px',
     paddingBottom: '9px',
-    '&.actionButton': {
-      padding: 'unset',
-      paddingLeft: '20px',
-      paddingTop: '9px',
-    }
   },
   button: {
     border: `1px solid ${theme.palette.primary.main}`,
@@ -95,9 +91,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     ...theme.typography.h6,
-    '&.actionButton': {
+    '& svg': {
+      height: 'unset',
+      width: 'unset',
+      '& path': {
+        fill: theme.palette.primary.main,
+      }
+    },
+    '&:hover': {
       backgroundColor: theme.palette.primary.main,
       color: "white",
+      '& svg path': {
+        fill: "white",
+      },
     },
   }
 }));
