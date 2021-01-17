@@ -77,9 +77,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '0.875rem',
   },
   buttonRoot: {
-    padding: 'unset',
     paddingLeft: '20px',
-    paddingBottom: '9px',
   },
   button: {
     border: `1px solid ${theme.palette.primary.main}`,
@@ -87,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 5,
     padding: '0.625rem',
     width: 140,
-    height: 116,
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     ...theme.typography.h6,
