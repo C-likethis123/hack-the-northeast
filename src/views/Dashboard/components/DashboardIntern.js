@@ -37,5 +37,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+    padding: '37.5px 24px',
   },
 }));
