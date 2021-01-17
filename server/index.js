@@ -5,6 +5,7 @@ const PORT = 5000;
 app.use(bodyParser.urlencoded({
   extended: false,
 }));
+app.use(bodyParser.json());
 
 app.post('/login', (req, res) => {
   console.log(req.body);
@@ -69,6 +70,39 @@ app.get('/users/:id', (req, res) => {
 app.post('/users', (req, res) => {
   Students.push(req.body);
   return res.status(200).json("User added!");
+})
+
+// REST API for companies
+const Companies = [{
+  companyId: 1,
+  userType: "company",
+  companyName: "KoolTech Company",
+  industry: "Technology",
+  companyType: "startup",
+  employeeSkills: ["Microsoft Office"],
+  companyValues: ["Integrity", "Innovation"],
+  jobOpenings: [{
+    jobTitle: "IT Engineer",
+    department: "IT Services",
+    from: "10-Jan-2020",
+    to: "20-June-2020",
+    jobDescription: "Description here"
+  }]
+}]
+
+app.get('/companies/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const company = Companies.find(company => company.userId === id);
+  if (company) {
+    return res.status(200).json(company);
+  } else {
+    return res.status(404).json("No companies found!");
+  }
+})
+
+app.post('/companies', (req, res) => {
+  Students.push(req.body);
+  return res.status(200).json("Company added!");
 })
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
