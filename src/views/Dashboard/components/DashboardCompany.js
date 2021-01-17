@@ -7,7 +7,7 @@ export default function DashboardCompany() {
   const classes = useStyles();
   var internList = [
     {
-      name: "Joseph Lim",
+      name: "Josephine Lim",
       invited: true,
       credentials: "Undergraduate, Computer Science",
       skills: {
