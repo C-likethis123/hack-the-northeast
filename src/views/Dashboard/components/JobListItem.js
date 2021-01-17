@@ -7,8 +7,8 @@ import { toast } from "react-toastify";
 
 export default function JobListItem(props) {
   const classes = useStyles();
-  const applyForJob = () => toast('You have successfully applied for the position!');
-  const saveJob = () => toast('You have successfully saved the job!');
+  const applyForJob = () => toast.success('You have successfully applied for the position!');
+  const saveJob = () => toast.success('You have successfully saved the job!');
   return (
     <Box className={classes.jobListingContainer} display="flex" width="100%">
       <Box className={classes.container} display="flex" flexDirection="column">

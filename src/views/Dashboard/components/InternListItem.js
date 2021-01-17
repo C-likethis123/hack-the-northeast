@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 export default function InternListItem(props) {
   const classes = useStyles();
-  const sendInvite = () => toast(`Invited ${props.name} for an interview!`)
+  const sendInvite = () => toast.success(`Invited ${props.name} for an interview!`)
   return (
     <Box className={classes.jobListingContainer} display="flex" width="100%">
       <Box className={classes.container} display="flex" flexDirection="column">

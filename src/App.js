@@ -13,7 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box className={classes.root}>
         <Body />
-        <ToastContainer />
+        <ToastContainer hideProgressBar />
       </Box>
     </ThemeProvider>
   );
