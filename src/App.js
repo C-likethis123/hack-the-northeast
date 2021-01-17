@@ -1,23 +1,22 @@
 import './App.css';
+import React from 'react';
 import { Box, makeStyles } from "@material-ui/core";
-import { Body, Header } from './layouts';
+import { Body } from './layouts';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from "./theme";
 
 function App() {
   const classes = useStyles();
-  const showHeader = window.location.hash !== '#/hack-the-northeast/signup' && window.location.hash !== '#/hack-the-northeast/login';
   return (
     <ThemeProvider theme={theme}>
       <Box className={classes.root}>
-        {showHeader && <Header colour="default" />}
         <Body />
       </Box>
     </ThemeProvider>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     height: '100vh',
   },

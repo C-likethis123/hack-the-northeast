@@ -5,20 +5,23 @@ import PreferencesItem from "./PreferencesItem";
 import HobbiesItem from "./HobbiesItem";
 import { Typography } from "@material-ui/core";
 import EducationsItem from './EducationsItem';
+import { Header } from "../../../layouts";
+
 export default function ProfileIntern() {
 
   return (
     <div>
-      <Typography variant="h2" style = {{margin: "15px"}} className="title">Start your internship journey!</Typography>
+      <Header colour="default" />
+      <Typography variant="h2" style={{ margin: "15px" }} className="title">Start your internship journey!</Typography>
       <div>
-        <EducationsItem/>
-        <SkillsItem/>
-        <ExperiencesItem/>
-        <PreferencesItem/>
-        <HobbiesItem/>
+        <EducationsItem />
+        <SkillsItem />
+        <ExperiencesItem />
+        <PreferencesItem />
+        <HobbiesItem />
 
       </div>
-      <div style = {{height: "100px"}}>
+      <div style={{ height: "100px" }}>
       </div>
     </div>
   )
