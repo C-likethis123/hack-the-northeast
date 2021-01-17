@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link, FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core';
+import { FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core';
+import { Header } from "../layouts";
 
 export default function SignUp() {
   const classes = useStyles();
@@ -14,6 +15,7 @@ export default function SignUp() {
   return (
     <Box className={classes.root}>
       <Box className={classes.container}>
+        <Header colour="default" />
         <Box className={classes.text}>
           <Typography variant="h1" color="secondary">Welcome Back!</Typography>
           <Typography variant="body2">Find the perfect internship for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec massa augue. Proin aliquam lorem nisi, vitae fermentum tortor posuere id. Mauris interdum ac est id ultrices. </Typography>
@@ -21,7 +23,6 @@ export default function SignUp() {
             Sign In
           </Button>
         </Box>
-
       </Box>
       <Box className={classes.container}>
         <Box className={classes.text}>
