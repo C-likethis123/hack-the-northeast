@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { RadioGroup, Radio, FormControlLabel, FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core';
 import { Header } from "../layouts";
 import { useHistory } from 'react-router-dom';
+import { toast } from "react-toastify";
 export default function SignUp() {
   const classes = useStyles();
   const [username, setUsername] = useState("");
@@ -15,6 +16,7 @@ export default function SignUp() {
   const handleChange = (event) => setUserType(event.target.value);
   const history = useHistory();
   const goToLogin = () => history.push('/login');
+  const signUp = () => toast.success('You have successfully signed up!');
 
   return (
     <Box className={classes.root}>
@@ -72,7 +74,7 @@ export default function SignUp() {
               <FormControlLabel color="primary" className={classes.radio} value="student" label="Student" control={<Radio color="primary" />} />
               <FormControlLabel color="primary" className={classes.radio} value="company" label="Company" control={<Radio color="primary" />} />
             </RadioGroup>
-            <Button className={classes.button} variant="contained" color="primary">Sign Up</Button>
+            <Button className={classes.button} onClick={signUp} variant="contained" color="primary">Sign Up</Button>
           </form>
         </Box>
       </Box>
