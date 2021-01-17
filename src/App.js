@@ -3,7 +3,9 @@ import React from 'react';
 import { Box, makeStyles } from "@material-ui/core";
 import { Body } from './layouts';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { ToastContainer } from 'react-toastify';
 import theme from "./theme";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const classes = useStyles();
@@ -11,6 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box className={classes.root}>
         <Body />
+        <ToastContainer />
       </Box>
     </ThemeProvider>
   );

@@ -3,9 +3,11 @@ import SkillItem from './SkillItem'
 import { SvgIcon, IconButton, Box, Typography, makeStyles } from "@material-ui/core";
 import { ReactComponent as Invitation } from "./images/invitation.svg";
 import { ReactComponent as Application } from "./images/application.svg";
+import { toast } from 'react-toastify';
 
 export default function InternListItem(props) {
   const classes = useStyles();
+  const sendInvite = () => toast(`Invited ${props.name} for an interview!`)
   return (
     <Box className={classes.jobListingContainer} display="flex" width="100%">
       <Box className={classes.container} display="flex" flexDirection="column">
@@ -37,7 +39,7 @@ export default function InternListItem(props) {
         </div>
       </Box>
       {props.invited ? (
-        <IconButton classes={{ root: classes.buttonRoot, label: classes.button }}>
+        <IconButton onClick={sendInvite} classes={{ root: classes.buttonRoot, label: classes.button }}>
           <SvgIcon viewBox="0 0 58 58" component={Invitation} />
 
         Invite

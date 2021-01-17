@@ -3,10 +3,12 @@ import SkillItem from './SkillItem'
 import { IconButton, Button, Box, Typography, makeStyles } from "@material-ui/core";
 import Bookmark from "./images/bookmark.svg";
 import Apply from "./images/apply.svg";
+import { toast } from "react-toastify";
 
 export default function JobListItem(props) {
   const classes = useStyles();
-
+  const applyForJob = () => toast('You have successfully applied for the position!');
+  const saveJob = () => toast('You have successfully saved the job!');
   return (
     <Box className={classes.jobListingContainer} display="flex" width="100%">
       <Box className={classes.container} display="flex" flexDirection="column">
@@ -29,11 +31,12 @@ export default function JobListItem(props) {
         </div>
       </Box>
       <Box display="flex" flexDirection="column">
-        <IconButton classes={{ root: classes.buttonRoot, label: classes.button }}>
+        <IconButton onClick={saveJob} classes={{ root: classes.buttonRoot, label: classes.button }}>
           <img src={Bookmark} alt="Save Job" />
           Save Job
         </IconButton>
         <IconButton
+          onClick={applyForJob}
           variant="contained"
           classes={{
             root: `${classes.buttonRoot} actionButton`,

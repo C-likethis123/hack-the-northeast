@@ -5,7 +5,7 @@ export default function SkillItem(props) {
   const classes = useStyles();
   return (
     <Chip
-      className={`${classes.chip} ${props.type}`}
+      className={`${classes.chip} ${props.type || 'skills'}`}
       variant="outlined"
       size="small"
       label={props.skill}
