@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { Home, Login, Dashboard, SignUp, Profile } from "../views"
+import { Home, Login, DashboardIntern, DashboardCompany, SignUp, Profile } from "../views"
 import { useState } from 'react';
 import GuardedRoute from 'react-guarded-route';
 
@@ -18,7 +18,13 @@ export default function Body() {
         <Route path="/signup" component={SignUp} />
         <GuardedRoute
           path="/dashboard"
-          component={Dashboard}
+          component={DashboardIntern}
+          redirectTo="/login"
+          validatorFunction={isAuthenticated}
+        />
+        <GuardedRoute
+          path="/company"
+          component={DashboardCompany}
           redirectTo="/login"
           validatorFunction={isAuthenticated}
         />
