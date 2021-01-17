@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
 const BlueAutoComplete = withStyles({
   tag: {
     fontWeight: "bold",
-    fontSize: "0.6rem",
+    fontSize: "1.0rem",
     backgroundColor: "#274690",
     height: 24,
     position: "relative",

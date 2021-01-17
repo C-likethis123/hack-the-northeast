@@ -12,7 +12,7 @@ const typography = {
 
     h3: {
       color: '#575757',
-      fontSize: '0.6rem',
+      fontSize: '1.0rem',
       fontWeight: 'bold', 
     },
 
@@ -23,7 +23,7 @@ const typography = {
 
     body1: {
       color: '#575757',
-      fontSize: '0.6rem',
+      fontSize: '0.9rem',
     },
     
     body2: {

@@ -17,8 +17,22 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-export default function PreferencesItem(props) {
+const options = [
+  { value: 'Agriculture', label: 'Agriculture' },
+  { value: 'Automotive', label: 'Automotive' },
+  { value: 'Business Services', label: 'Business Services' },
+  { value: 'Construction', label: 'Construction' },
+  { value: 'Defense', label: 'Defense' },
+  { value: 'Education', label: 'Education' },
+  { value: 'Environment', label: 'Environment' },
+];
+
+export default function ProfilesItem(props) {
   const classes = useStyles();
+  const defaultProps = {
+    options: options,
+    getOptionLabel: (option) => option.label,
+  };
   const defaultCompanyCheckedStatus = {
     'Startup': false,
     'Small and Medium-Sized Enterprises (SMEs)': false,
@@ -30,15 +44,10 @@ export default function PreferencesItem(props) {
     'Multinational Corporations (MNCs)': false,
   };
 
-  const defaultWorkCheckedStatus = {
-    'Remote': false,
-    'In Office': false,
-    'Hybrid': false,
-  };
-
+  const [companyInput, setCompanyInput] = useState("");
   const [companyCheckedStatus, setCompanyCheckedStatus] = useState(defaultCompanyCheckedStatus);
-  const [workCheckedStatus, setWorkCheckedStatus] = useState(defaultWorkCheckedStatus);
 
+  const changeCompanyInput = (event) => setCompanyInput(event.target.value);
   const handleChangeCompany = (event) => {
     const newStatus = {
       ...companyCheckedStatus,
@@ -48,14 +57,6 @@ export default function PreferencesItem(props) {
     setCompanyCheckedStatus(newStatus);
   };
 
-  const handleChangeWork = (event) => {
-    const newStatus = {
-      ...workCheckedStatus,
-      [event.target.name]: event.target.checked,
-    }
-
-    setWorkCheckedStatus(newStatus);
-  };
   
   return (
     <div className="orangeBox">
@@ -65,30 +66,34 @@ export default function PreferencesItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography variant="h3">4. PREFERENCES- What kind of jobs are you looking for?</Typography>
+          <Typography variant="h3">1. PROFILE- Some basic information</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
+            <FilledInput
+              className={classes.input}
+              onChange={changeCompanyInput}
+              value={companyInput}
+              placeholder="Company Name"
+              disableUnderline
+              fullWidth
+            />
+
             <div>
-              <OrangeAutoComplete
-                multiple
-                id="tags-standard"
-                options={skills}
-                getOptionLabel={(option) => option.title}
-                defaultValue={[skills[0]]}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    variant="standard"
-                    label="Skills"
-                    placeholder="Information System, Finance, Environment..."
+              <div>
+                <Autocomplete
+                    {...defaultProps}
+                    id="industry"
+                    autoComplete
+                    fullWidth
+                    includeInputInList
+                    renderInput={(params) => <TextField {...params} label="Industry"/>}
                   />
-                )}
-              />
+              </div>
             </div>
 
             <div style = {{marginTop: "10px"}}>
-              <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of company do you prefer to work in?</Typography>
+              <Typography variant= "body1" style = {{marginTop: "10px"}}>What type of company are you?</Typography>
 
               <div style = {{marginLeft: "8px"}}>
                 {Object.keys(defaultCompanyCheckedStatus).map((value) => {
@@ -104,23 +109,6 @@ export default function PreferencesItem(props) {
             
             </div>
 
-            <div style = {{marginTop: "10px"}}>
-              <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
-
-              <div style = {{marginLeft: "8px"}}>
-                {Object.keys(defaultWorkCheckedStatus).map((value) => {
-                  return <FormControlLabel
-                  control={<Checkbox 
-                    style = {{border: "20px"}}
-                    className={classes.checkbox} 
-                    checked={workCheckedStatus[value]} onChange={handleChangeWork} name={value} />}
-                  label={<Typography variant= "body1">{value}</Typography>}
-                />
-              })}
-              </div>
-            
-            </div>
-
           </div>
         </AccordionDetails>
       </Accordion>
@@ -129,43 +117,6 @@ export default function PreferencesItem(props) {
   )
 
 }
-
-
-const OrangeAutoComplete = withStyles({
-  tag: {
-    fontWeight: "bold",
-    fontSize: "0.6rem",
-    backgroundColor: "#ED8057",
-    height: 24,
-    position: "relative",
-    zIndex: 0,
-    
-    "& .MuiChip-label": {
-      color: "#fff"
-    },
-    "& .MuiChip-deleteIcon": {
-      color: "#ED8057"
-    },
-    "&:after": {
-      content: '""',
-      right: 10,
-      top: 6,
-      height: 12,
-      width: 12,
-      position: "absolute",
-      backgroundColor: "white",
-      zIndex: -1
-    }
-  }
-})(Autocomplete);
-
-const skills = [
-  { title: 'Product Design', type: 'technical' },
-  { title: 'Front End Development', type: 'technical' },
-  { title: 'Education', type: 'technical' },
-  { title: 'UI/UX', type: 'technical' },
-  { title: 'Game Development', type: 'technical' }
-];
 
 const useStyles = makeStyles((theme) => ({
   root: {
