@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/hack-the-northeast/static/css/main.e03c3a0a.chunk.css",
-    "main.js": "/hack-the-northeast/static/js/main.f1a5bb44.chunk.js",
-    "main.js.map": "/hack-the-northeast/static/js/main.f1a5bb44.chunk.js.map",
+    "main.js": "/hack-the-northeast/static/js/main.9908a5bc.chunk.js",
+    "main.js.map": "/hack-the-northeast/static/js/main.9908a5bc.chunk.js.map",
     "runtime-main.js": "/hack-the-northeast/static/js/runtime-main.b22d405b.js",
     "runtime-main.js.map": "/hack-the-northeast/static/js/runtime-main.b22d405b.js.map",
     "static/css/2.83342f34.chunk.css": "/hack-the-northeast/static/css/2.83342f34.chunk.css",
-    "static/js/2.f7e90aa2.chunk.js": "/hack-the-northeast/static/js/2.f7e90aa2.chunk.js",
-    "static/js/2.f7e90aa2.chunk.js.map": "/hack-the-northeast/static/js/2.f7e90aa2.chunk.js.map",
+    "static/js/2.d63b1ff6.chunk.js": "/hack-the-northeast/static/js/2.d63b1ff6.chunk.js",
+    "static/js/2.d63b1ff6.chunk.js.map": "/hack-the-northeast/static/js/2.d63b1ff6.chunk.js.map",
     "static/js/3.cfdd5dc2.chunk.js": "/hack-the-northeast/static/js/3.cfdd5dc2.chunk.js",
     "static/js/3.cfdd5dc2.chunk.js.map": "/hack-the-northeast/static/js/3.cfdd5dc2.chunk.js.map",
     "index.html": "/hack-the-northeast/index.html",
     "static/css/2.83342f34.chunk.css.map": "/hack-the-northeast/static/css/2.83342f34.chunk.css.map",
     "static/css/main.e03c3a0a.chunk.css.map": "/hack-the-northeast/static/css/main.e03c3a0a.chunk.css.map",
-    "static/js/2.f7e90aa2.chunk.js.LICENSE.txt": "/hack-the-northeast/static/js/2.f7e90aa2.chunk.js.LICENSE.txt",
+    "static/js/2.d63b1ff6.chunk.js.LICENSE.txt": "/hack-the-northeast/static/js/2.d63b1ff6.chunk.js.LICENSE.txt",
     "static/media/application.cb0e9349.svg": "/hack-the-northeast/static/media/application.cb0e9349.svg",
     "static/media/apply.f87d5f7c.svg": "/hack-the-northeast/static/media/apply.f87d5f7c.svg",
     "static/media/bookmark.d631e441.svg": "/hack-the-northeast/static/media/bookmark.d631e441.svg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.b22d405b.js",
     "static/css/2.83342f34.chunk.css",
-    "static/js/2.f7e90aa2.chunk.js",
+    "static/js/2.d63b1ff6.chunk.js",
     "static/css/main.e03c3a0a.chunk.css",
-    "static/js/main.f1a5bb44.chunk.js"
+    "static/js/main.9908a5bc.chunk.js"
   ]
 }
