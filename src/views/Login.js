@@ -24,6 +24,8 @@ export default function Login({ authenticate }) {
     }
   };
 
+  const goToSignUp = () => history.push("/signup");
+
   return (
     <Box className={classes.root}>
       <Box className={classes.container}>
@@ -70,7 +72,7 @@ export default function Login({ authenticate }) {
           <Typography variant="body2" color="secondary">
             Employers can also invite interns they are interested in to apply, increasing the chances of a perfect match!
           </Typography>
-          <Button className={classes.button} href="/#/signup" variant="contained" color="secondary">
+          <Button className={classes.button} onClick={goToSignUp} variant="contained" color="secondary">
             Sign Up
           </Button>
         </Box>

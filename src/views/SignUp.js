@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { RadioGroup, Radio, FormControlLabel, FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core';
 import { Header } from "../layouts";
-
+import { useHistory } from 'react-router-dom';
 export default function SignUp() {
   const classes = useStyles();
   const [username, setUsername] = useState("");
@@ -13,6 +13,8 @@ export default function SignUp() {
   const changeEmail = (event) => setEmail(event.target.value);
   const [userType, setUserType] = useState("company");
   const handleChange = (event) => setUserType(event.target.value);
+  const history = useHistory();
+  const goToLogin = () => history.push('/login');
 
   return (
     <Box className={classes.root}>
@@ -31,7 +33,7 @@ export default function SignUp() {
           <Typography variant="body2" color="secondary">
             Employers can also invite interns they are interested in to apply, increasing the chances of a perfect match!
           </Typography>
-          <Button className={classes.button} href="/#/login" variant="contained" color="secondary">
+          <Button className={classes.button} onClick={goToLogin} variant="contained" color="secondary">
             Sign In
           </Button>
         </Box>
