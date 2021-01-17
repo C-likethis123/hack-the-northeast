@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.post('/login', (req, res) => {
   console.log(req.body);
   const { username, password } = req.body;
-  if (username === 'test' && password === 'test') {
+  if (username === 'josephinelim' && password === 'josephine') {
     return res.status(200).json({
       userId: 1,
       loggedIn: true,

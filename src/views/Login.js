@@ -13,7 +13,7 @@ export default function Login({ authenticate }) {
   const history = useHistory();
   const handleChange = (event) => setUserType(event.target.value);
   const onLogin = () => {
-    const isCredentialsCorrect = username === 'test' && password === 'test';
+    const isCredentialsCorrect = username === 'josephinelim' && password === 'josephinelim123';
     if (isCredentialsCorrect) {
       authenticate();
       if (userType === 'company') {
