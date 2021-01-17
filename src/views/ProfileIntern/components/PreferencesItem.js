@@ -87,8 +87,8 @@ export default function PreferencesItem(props) {
               />
             </div>
 
-            <div style = {{marginTop: "10px"}}>
-              <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of company do you prefer to work in?</Typography>
+            <div style = {{marginTop: "30px"}}>
+              <Typography variant= "body3" style = {{marginTop: "10px"}}>What kind of company do you prefer to work in?</Typography>
 
               <div style = {{marginLeft: "8px"}}>
                 {Object.keys(defaultCompanyCheckedStatus).map((value) => {
@@ -97,15 +97,15 @@ export default function PreferencesItem(props) {
                     style = {{border: "20px"}}
                     className={classes.checkbox} 
                     checked={companyCheckedStatus[value]} onChange={handleChangeCompany} name={value} />}
-                  label={<Typography variant= "body1">{value}</Typography>}
+                  label={<Typography variant= "body3">{value}</Typography>}
                 />
               })}
               </div>
             
             </div>
 
-            <div style = {{marginTop: "10px"}}>
-              <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
+            <div style = {{marginTop: "30px"}}>
+              <Typography variant= "body3" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
 
               <div style = {{marginLeft: "8px"}}>
                 {Object.keys(defaultWorkCheckedStatus).map((value) => {
@@ -114,7 +114,7 @@ export default function PreferencesItem(props) {
                     style = {{border: "20px"}}
                     className={classes.checkbox} 
                     checked={workCheckedStatus[value]} onChange={handleChangeWork} name={value} />}
-                  label={<Typography variant= "body1">{value}</Typography>}
+                  label={<Typography variant= "body3">{value}</Typography>}
                 />
               })}
               </div>
@@ -209,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
   },
   checkbox: {
     '&.MuiIconButton-root': {
-      padding: '4px',
+      padding: '6px',
     },
     '&.Mui-checked': {
       color: 'rgba(0, 0, 0, 0.54)',

@@ -30,8 +30,9 @@ export default function ToolsItem(props) {
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
-            <Typography variant= "body1">Select the most widely-used tools throughout the company. This will help us find suitable interns.</Typography>
+            <Typography variant= "body3">Select the most widely-used tools throughout the company. This will help us find suitable interns.</Typography>
             <OrangeAutoComplete
+              style = {{marginTop: "10px"}}
               multiple
               id="tags-standard"
               options={skills}

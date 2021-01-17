@@ -33,8 +33,9 @@ export default function CulturesItem(props) {
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
             <div>
-            <Typography variant= "body1">This will help us find suitable interns.</Typography>
+            <Typography variant= "body3">This will help us find suitable interns.</Typography>
               <PurpleAutoComplete
+                style = {{marginTop: "10px"}}
                 multiple
                 id="tags-standard"
                 options={cultures}

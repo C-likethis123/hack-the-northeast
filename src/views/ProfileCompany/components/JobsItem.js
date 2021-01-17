@@ -77,6 +77,7 @@ export default function JobsItem(props) {
               <form>
                 <Typography>First Job Position</Typography>
                 <FilledInput
+                  style = {{marginTop: "10px"}}
                   className={classes.input}
                   onChange={changeJobInput}
                   value={jobInput}
@@ -85,6 +86,7 @@ export default function JobsItem(props) {
                   fullWidth
                 />
                 <FilledInput
+                  style = {{marginTop: "10px"}}
                   className={classes.input}
                   onChange={changeDepartmentInput}
                   value={departmentInput}
@@ -93,7 +95,7 @@ export default function JobsItem(props) {
                   fullWidth
                 />
 
-                <div style = {{margin: "10px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
+                <div style = {{marginTop: "30px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                   <div style = {{width:"100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                     <Typography style={{marginRight: "10px"}}>From </Typography>
                     <input style={{width:"50%", fontSize: "1.0rem"}} type="date" />
@@ -105,6 +107,7 @@ export default function JobsItem(props) {
                 </div>
 
                 <FilledInput
+                  style = {{marginTop: "30px"}}
                   className={classes.inputDescription}
                   onChange={changeDescriptionInput}
                   value={descriptionInput}
@@ -116,6 +119,7 @@ export default function JobsItem(props) {
 
                 <div>
                   <BlueAutoComplete
+                      style = {{marginTop: "30px"}}
                       multiple
                       id="tags-standard"
                       options={requiredSkills}
@@ -134,6 +138,7 @@ export default function JobsItem(props) {
 
                 <div>
                   <GreenAutoComplete
+                      style = {{marginTop: "30px"}}
                       multiple
                       id="tags-standard"
                       options={preferredSkills}
@@ -150,8 +155,8 @@ export default function JobsItem(props) {
                     />
                 </div>
 
-                <div style = {{marginTop: "10px"}}>
-                  <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
+                <div style = {{marginTop: "30px"}}>
+                  <Typography variant= "body3" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
 
                   <div style = {{marginLeft: "8px"}}>
                     {Object.keys(defaultWorkCheckedStatus).map((value) => {
@@ -160,17 +165,18 @@ export default function JobsItem(props) {
                         style = {{border: "20px"}}
                         className={classes.checkbox} 
                         checked={workCheckedStatus[value]} onChange={handleChangeWork} name={value} />}
-                      label={<Typography variant= "body1">{value}</Typography>}
+                      label={<Typography variant= "body3">{value}</Typography>}
                     />
                   })}
                   </div>
                 
                 </div>
 
-                <div style = {{marginTop: "10px"}}>
-                  <Typography variant= "body1" style = {{marginTop: "10px"}}>How many positions are available for this job?</Typography>
+                <div style = {{marginTop: "30px"}}>
+                  <Typography variant= "body3" style = {{marginTop: "10px"}}>How many positions are available for this job?</Typography>
                   
                   <FilledInput
+                    style = {{marginTop: "10px"}}
                     className={classes.input}
                     onChange={changePositionInput}
                     value={positionInput}

@@ -92,17 +92,17 @@ export default function ProfilesItem(props) {
               </div>
             </div>
 
-            <div style = {{marginTop: "10px"}}>
-              <Typography variant= "body1" style = {{marginTop: "10px"}}>What type of company are you?</Typography>
+            <div style = {{marginTop: "30px"}}>
+              <Typography variant= "body3">What type of company are you?</Typography>
 
-              <div style = {{marginLeft: "8px"}}>
+              <div style = {{marginTop: "10px", marginLeft: "8px"}}>
                 {Object.keys(defaultCompanyCheckedStatus).map((value) => {
                   return <FormControlLabel
                   control={<Checkbox 
                     style = {{border: "20px"}}
                     className={classes.checkbox} 
                     checked={companyCheckedStatus[value]} onChange={handleChangeCompany} name={value} />}
-                  label={<Typography variant= "body1">{value}</Typography>}
+                  label={<Typography variant= "body3">{value}</Typography>}
                 />
               })}
               </div>

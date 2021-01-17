@@ -59,6 +59,7 @@ export default function ExperiencesItem(props) {
               <form>
                 <Typography>Current/Most recent employer</Typography>
                 <FilledInput
+                  style = {{marginTop: "10px"}}
                   className={classes.input}
                   onChange={changeCompanyInput}
                   value={companyInput}
@@ -67,6 +68,7 @@ export default function ExperiencesItem(props) {
                   fullWidth
                 />
                 <FilledInput
+                  style = {{marginTop: "10px"}}
                   className={classes.input}
                   onChange={changeJobInput}
                   value={jobInput}
@@ -83,7 +85,7 @@ export default function ExperiencesItem(props) {
                   renderInput={(params) => <TextField {...params} label="Employment Type"/>}
                 />
 
-                <div style = {{margin: "10px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
+                <div style = {{marginTop: "30px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                   <div style = {{width:"100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                     <Typography style={{marginRight: "10px"}}>From </Typography>
                     <input style={{width:"50%", fontSize: "1.0rem"}} type="date" />
@@ -95,6 +97,7 @@ export default function ExperiencesItem(props) {
                 </div>
 
                 <FilledInput
+                  style = {{marginTop: "30px"}}
                   className={classes.inputDescription}
                   onChange={changeDescriptionInput}
                   value={descriptionInput}

@@ -5,7 +5,7 @@ const typography = {
       fontWeight: 'bold',
     },
     h2: {
-      fontSize: '1.5rem',
+      fontSize: '2.5rem',
       fontWeight: 'bold',
     },
 
@@ -23,11 +23,14 @@ const typography = {
       fontWeight: 'bold',
       fontSize: '1.125rem',
     },
-    body1: {
+    body3: {
       fontSize: '1.5rem',
     },
     body2: {
       fontSize: '1.125rem',
+    },
+    body3: {
+      fontSize: '0.9rem',
     },
   },
 };

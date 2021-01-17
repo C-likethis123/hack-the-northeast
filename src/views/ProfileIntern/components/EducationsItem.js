@@ -81,7 +81,7 @@ export default function EducationsItem(props) {
                 />
 
 
-                <div style = {{margin: "10px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
+                <div style = {{margin: "20px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                   <div style = {{width:"100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                     <Typography style={{marginRight: "10px"}}>From </Typography>
                     <input style={{width:"50%", fontSize: "1.0rem"}} type="date" />

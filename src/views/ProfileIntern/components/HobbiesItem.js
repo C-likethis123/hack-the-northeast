@@ -33,8 +33,9 @@ export default function HobbiesItem(props) {
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
             <div>
-            <Typography variant= "body1" style = {{marginTop: "10px"}}>What are your hobbies? How do you spend your free time?</Typography>
+            <Typography variant= "body3" style = {{marginTop: "10px"}}>What are your hobbies? How do you spend your free time?</Typography>
               <BlueAutoComplete
+                style = {{marginTop: "10px"}}
                 multiple
                 id="tags-standard"
                 options={hobbies}
@@ -51,9 +52,10 @@ export default function HobbiesItem(props) {
               />
             </div>
 
-            <div>
-            <Typography variant= "body1" style = {{marginTop: "20px"}}>How will your friends describe you?</Typography>
+            <div style = {{marginTop: "30px"}}>
+            <Typography variant= "body3" >How will your friends describe you?</Typography>
               <BlueAutoComplete
+                style = {{marginTop: "10px"}}
                 multiple
                 id="tags-standard"
                 options={personalities}
