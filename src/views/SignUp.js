@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core';
+import { RadioGroup, Radio, FormControlLabel, FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core';
 import { Header } from "../layouts";
 
 export default function SignUp() {
@@ -11,6 +11,8 @@ export default function SignUp() {
   const changeUsername = (event) => setUsername(event.target.value);
   const changePassword = (event) => setPassword(event.target.value);
   const changeEmail = (event) => setEmail(event.target.value);
+  const [userType, setUserType] = useState("company");
+  const handleChange = (event) => setUserType(event.target.value);
 
   return (
     <Box className={classes.root}>
@@ -64,6 +66,10 @@ export default function SignUp() {
               disableUnderline
               fullWidth
             />
+            <RadioGroup row value={userType} onChange={handleChange}>
+              <FormControlLabel color="primary" className={classes.radio} value="student" label="Student" control={<Radio color="primary" />} />
+              <FormControlLabel color="primary" className={classes.radio} value="company" label="Company" control={<Radio color="primary" />} />
+            </RadioGroup>
             <Button className={classes.button} variant="contained" color="primary">Sign Up</Button>
           </form>
         </Box>
