@@ -6,21 +6,12 @@ import theme from "./theme";
 
 function App() {
   const classes = useStyles();
-  const isSignUp = window.location.pathname === '/signup';
+  const showHeader = window.location.hash !== '#/hack-the-northeast/signup' && window.location.hash !== '#/hack-the-northeast/login';
   return (
     <ThemeProvider theme={theme}>
       <Box className={classes.root}>
-        {!isSignUp && <Header />}
+        {showHeader && <Header colour="default" />}
         <Body />
-        {/* <div className={classes.pinkBackground}>
-        <div class="red">Red1</div>
-        <div class="red">Red1</div>
-
-        <div class="red">Red1</div>
-        <div class="red">Red1</div>
-        <div class="red">Red1</div>
-
-      </div> */}
       </Box>
     </ThemeProvider>
   );
@@ -30,15 +21,5 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
   },
-  background: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  pinkBackground: {
-    backgroundColor: 'pink',
-    // adding your own css selectors to target more nested classes
-    '& .red': {
-      backgroundColor: 'red',
-    }
-  }
 }));
 export default App;
