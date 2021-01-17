@@ -11,7 +11,7 @@ export default function JobListItem(props) {
     <Box className={classes.jobListingContainer} display="flex" width="100%">
       <Box className={classes.container} display="flex" flexDirection="column">
         <Box display="flex">
-          <img src={props.image} width="100px" />
+          <img alt="Company Image" src={props.image} width="100px" />
           <div className={classes.jobDetails}>
             <Typography variant="h6">{props.jobTitle}</Typography>
             <Typography variant="body2">{props.name}</Typography>
