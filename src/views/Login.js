@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
-import { FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core'; import { useHistory } from 'react-router-dom';
+import { FormControlLabel, Radio, RadioGroup, FilledInput, Box, Button, Typography, makeStyles } from '@material-ui/core'; import { useHistory } from 'react-router-dom';
 import { Header } from "../layouts";
 
 export default function Login({ authenticate }) {
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [userType, setUserType] = useState("company");
   const changeUsername = (event) => setUsername(event.target.value);
   const changePassword = (event) => setPassword(event.target.value);
 
   const history = useHistory();
+  const handleChange = (event) => setUserType(event.target.value);
   const onLogin = () => {
     const isCredentialsCorrect = username === 'test' && password === 'test';
     if (isCredentialsCorrect) {
       authenticate();
-      history.push("/dashboard");
+      if (userType === 'company') {
+        history.push("/profileCompany");
+      } else {
+        history.push("/profileIntern")
+      }
     }
   };
 
@@ -24,7 +29,7 @@ export default function Login({ authenticate }) {
       <Box className={classes.container}>
         <Header colour="white" />
         <Box className={classes.text}>
-          <Typography variant="h1" color="primary">Welcome Back!</Typography>
+          <Typography style={{ marginBottom: "20px" }} variant="h1" color="primary">Welcome Back!</Typography>
           <form>
             <FilledInput
               className={classes.input}
@@ -43,13 +48,17 @@ export default function Login({ authenticate }) {
               disableUnderline
               fullWidth
             />
+            <RadioGroup row value={userType} onChange={handleChange}>
+              <FormControlLabel color="primary" className={classes.radio} value="student" label="Student" control={<Radio color="primary" />} />
+              <FormControlLabel color="primary" className={classes.radio} value="company" label="Company" control={<Radio color="primary" />} />
+            </RadioGroup>
             <Button onClick={onLogin} className={classes.button} variant="contained" color="primary">Login</Button>
           </form>
         </Box>
       </Box>
       <Box className={classes.container}>
         <Box className={classes.text}>
-          <Typography variant="h1" color="secondary">Find your perfect internship</Typography>
+          <Typography style={{ marginBottom: "20px" }} variant="h1" color="secondary">Find your perfect internship</Typography>
           <Typography variant="body2" color="secondary">
             Skip the endless scrolling and easily get matched with the best internships for you!
             </Typography>
@@ -93,6 +102,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     padding: '0.53125rem 2.4375rem',
     borderRadius: '100px',
+    marginTop: 20,
   },
   input: {
     border: '2px solid #E5E5E5',

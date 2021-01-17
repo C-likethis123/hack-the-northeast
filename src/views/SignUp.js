@@ -17,16 +17,27 @@ export default function SignUp() {
       <Box className={classes.container}>
         <Header colour="default" />
         <Box className={classes.text}>
-          <Typography variant="h1" color="secondary">Welcome Back!</Typography>
-          <Typography variant="body2">Find the perfect internship for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec massa augue. Proin aliquam lorem nisi, vitae fermentum tortor posuere id. Mauris interdum ac est id ultrices. </Typography>
+          <Typography style={{ marginBottom: "20px" }} variant="h1" color="secondary">Welcome Back!</Typography>
+          <Typography variant="body2" color="secondary">
+            Skip the endless scrolling and easily get matched with the best internships for you!
+            </Typography>
+
+          <Typography variant="body2" color="secondary">
+            Our algorithm connects you with employers based on your skills and preferences.
+            </Typography>
+
+          <Typography variant="body2" color="secondary">
+            Employers can also invite interns they are interested in to apply, increasing the chances of a perfect match!
+          </Typography>
           <Button className={classes.button} href="/#/login" variant="contained" color="secondary">
             Sign In
           </Button>
         </Box>
       </Box>
       <Box className={classes.container}>
+        <div style={{ height: "65px" }} />
         <Box className={classes.text}>
-          <Typography variant="h1" color="primary">Create Account</Typography>
+          <Typography style={{ marginBottom: "20px" }} variant="h1" color="primary">Create Account</Typography>
           <form>
             <FilledInput
               className={classes.input}
@@ -83,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     padding: '0.53125rem 2.4375rem',
     borderRadius: '100px',
+    marginTop: 20,
   },
   input: {
     border: '2px solid #E5E5E5',
