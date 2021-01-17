@@ -1,15 +1,20 @@
 import React from 'react'
 import SkillItem from './SkillItem'
-import { Button, Box, Typography } from "@material-ui/core";
+import { Button, Box, Typography, makeStyles } from "@material-ui/core";
 
 export default function JobListItem(props) {
+  const classes = useStyles();
+
   return (
-    <Box display="flex" width="100%">
-      <Box display="flex">
+    <Box className={classes.jobListingContainer} display="flex" width="100%">
+      <Box className={classes.container} display="flex">
         <img src={props.image} width="100px" />
-        <div>
-          <Typography variant="h6">{props.name}</Typography>
-           As a software engineer, you will work on a specific project critical to {props.name}’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.
+        <div className={classes.jobDetails}>
+          <Typography variant="h6">{props.jobTitle}</Typography>
+          <Typography variant="body2">{props.name}</Typography>
+          <Typography variant="body2">
+            {props.jobDescription}
+          </Typography>
           <div>
             {props.skills.technicalSkills.map(
               (skill) => <SkillItem skill={skill} />)}
@@ -27,3 +32,18 @@ export default function JobListItem(props) {
   )
 }
 
+const useStyles = makeStyles((theme) => ({
+  jobListingContainer: {
+    marginTop: '1.34375rem',
+  },
+  container: {
+    border: `1px solid ${theme.palette.primary.main}`,
+    padding: '0.78125rem',
+    borderRadius: '5px',
+    boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.05)',
+  },
+  jobDetails: {
+    textAlign: 'left',
+    padding: '0.625rem',
+  },
+}));
