@@ -7,18 +7,26 @@ import { Container, Typography, makeStyles } from "@material-ui/core";
 export default function DashboardIntern() {
   const classes = useStyles();
   var jobList = [
-    { name: "Google", image: GoogleImage, skills: { technicalSkills: ["React", "HTML", "Figma"], softSkills: ["Communication"] } },
-    { name: "Facebook", image: FacebookImage, skills: { technicalSkills: ["Marketing", "Finance"], softSkills: ["Organisation"] } }
+    {
+      name: "Google",
+      jobTitle: "Software Engineer",
+      jobDescription: "As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.",
+      image: GoogleImage,
+      skills: { technicalSkills: ["React", "HTML", "Figma"], softSkills: ["Communication"] }
+    },
+    {
+      name: "Facebook",
+      jobTitle: "Marketing Intern",
+      jobDescription: "As a Marketing Intern, you will assist our marketing team to plan and lead marketing campaigns for Facebook product launches. Applicants should have prior experience in marketing, be it through academic or work experience. They should also be familiar with concepts such as branding and SEO.",
+      image: FacebookImage, skills: { technicalSkills: ["Marketing", "Finance"], softSkills: ["Organisation"] }
+    }
   ]
 
   return (
     <Container className={classes.root}>
       <Typography color="primary" variant="h1">We've found some jobs you'll love!</Typography>
       <Typography variant="body2">Indicate your interest or bookmark them (but don't wait too long!)</Typography>
-      <div>
-        {jobList.map(
-          (job) => <JobListItem name={job.name} image={job.image} skills={job.skills} />)}
-      </div>
+      {jobList.map((job) => <JobListItem {...job} />)}
     </Container>
   )
 }
@@ -29,5 +37,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+    padding: '37.5px 24px',
   },
 }));
