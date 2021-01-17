@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Home, Login, Dashboard, SignUp, Profile } from "../views"
 import { useState } from 'react';
 import GuardedRoute from 'react-guarded-route';
@@ -11,7 +11,7 @@ export default function Body() {
   const authenticate = () => setIsAuthenticated(true);
 
   return (
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" render={props => <Login authenticate={authenticate} />} />
@@ -29,7 +29,7 @@ export default function Body() {
           validatorFunction={isAuthenticated}
         />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
