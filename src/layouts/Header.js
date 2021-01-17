@@ -1,10 +1,13 @@
 import React from 'react'
 import { makeStyles } from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
 
 export default function Header() {
   const classes = useStyles()
   return (
-    <header className={classes.header}>JOB BOX</header>
+    <div className={classes.header}>
+      <Typography variant="body2">JOBBOX</Typography>
+    </div>
   )
 }
 
@@ -14,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontSize: '1.125rem',
     paddingLeft: '1.25rem',
-    paddingTop: '1.25rem',
-    paddingBottom: '1.25rem',
+    paddingTop: '0.25rem',
+    paddingBottom: '0.25rem',
   },
 }));

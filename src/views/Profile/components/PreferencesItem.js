@@ -7,18 +7,56 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles, withStyles } from '@material-ui/core/styles';
 import { FilledInput } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AddIcon from '@material-ui/icons/Add';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 export default function PreferencesItem(props) {
   const classes = useStyles();
-  const skills = {recommendedSkills:["Product Design", "Front End Development", "Education", "UI/UX", "Game Developer"], selectedSkills: ["User Experience", "Robotics", "Children", "IT"]}
-  const [preferenceInput, setpreferenceInput] = useState("");
+  const defaultCompanyCheckedStatus = {
+    'Startup': false,
+    'Small and Medium-Sized Enterprises (SMEs)': false,
+    'Government Agencies': false,
+    'Non-Profit': false,
+    'Non-Governmental Organisations (NGOs)': false,
+    'International Agencies': false,
+    'Local Businesses': false,
+    'Multinational Corporations (MNCs)': false,
+  };
 
-  const changepreferenceInput = (event) => setpreferenceInput(event.target.value);
+  const defaultWorkCheckedStatus = {
+    'Remote': false,
+    'In Office': false,
+    'Hybrid': false,
+  };
 
+  const [companyCheckedStatus, setCompanyCheckedStatus] = useState(defaultCompanyCheckedStatus);
+  const [workCheckedStatus, setWorkCheckedStatus] = useState(defaultWorkCheckedStatus);
+
+  const handleChangeCompany = (event) => {
+    const newStatus = {
+      ...companyCheckedStatus,
+      [event.target.name]: event.target.checked,
+    }
+
+    setCompanyCheckedStatus(newStatus);
+  };
+
+  const handleChangeWork = (event) => {
+    const newStatus = {
+      ...workCheckedStatus,
+      [event.target.name]: event.target.checked,
+    }
+
+    setWorkCheckedStatus(newStatus);
+  };
+  
   return (
     <div className="orangeBox">
       <Accordion>
@@ -27,38 +65,60 @@ export default function PreferencesItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>3. PREFERENCES- What kind of jobs are you looking for?</Typography>
+          <Typography variant="h3">4. PREFERENCES- What kind of jobs are you looking for?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
             <div>
-              <form>
-                
-                <FilledInput
-                  className={classes.input}
-                  onChange={changepreferenceInput}
-                  value={preferenceInput}
-                  placeholder="Information System, Finance, Environment..."
-                  disableUnderline
-                  fullWidth
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  }
+              <OrangeAutoComplete
+                multiple
+                id="tags-standard"
+                options={skills}
+                getOptionLabel={(option) => option.title}
+                defaultValue={[skills[0]]}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    label="Skills"
+                    placeholder="Information System, Finance, Environment..."
+                  />
+                )}
+              />
+            </div>
+
+            <div style = {{marginTop: "10px"}}>
+              <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of company do you prefer to work in?</Typography>
+
+              <div style = {{marginLeft: "8px"}}>
+                {Object.keys(defaultCompanyCheckedStatus).map((value) => {
+                  return <FormControlLabel
+                  control={<Checkbox 
+                    style = {{border: "20px"}}
+                    className={classes.checkbox} 
+                    checked={companyCheckedStatus[value]} onChange={handleChangeCompany} name={value} />}
+                  label={<Typography variant= "body1">{value}</Typography>}
                 />
-              </form>
+              })}
+              </div>
+            
             </div>
 
-            <div>
-              {skills.recommendedSkills.map(
-              (skill) => <SkillItem style = {classes.greyChipStyle} icon = {<AddIcon/>} skill = {skill}/>)}
-            </div>
+            <div style = {{marginTop: "10px"}}>
+              <Typography variant= "body1" style = {{marginTop: "10px"}}>What kind of work arrangement is ideal?</Typography>
 
-            <Typography>We will try to match you with your ideal jobs!</Typography>
-            <div>
-              {skills.selectedSkills.map(
-              (skill) => <SkillItem style = {classes.blueChipStyle} skill = {skill}/>)}
+              <div style = {{marginLeft: "8px"}}>
+                {Object.keys(defaultWorkCheckedStatus).map((value) => {
+                  return <FormControlLabel
+                  control={<Checkbox 
+                    style = {{border: "20px"}}
+                    className={classes.checkbox} 
+                    checked={workCheckedStatus[value]} onChange={handleChangeWork} name={value} />}
+                  label={<Typography variant= "body1">{value}</Typography>}
+                />
+              })}
+              </div>
+            
             </div>
 
           </div>
@@ -70,6 +130,42 @@ export default function PreferencesItem(props) {
 
 }
 
+
+const OrangeAutoComplete = withStyles({
+  tag: {
+    fontWeight: "bold",
+    fontSize: "0.6rem",
+    backgroundColor: "#ED8057",
+    height: 24,
+    position: "relative",
+    zIndex: 0,
+    
+    "& .MuiChip-label": {
+      color: "#fff"
+    },
+    "& .MuiChip-deleteIcon": {
+      color: "#ED8057"
+    },
+    "&:after": {
+      content: '""',
+      right: 10,
+      top: 6,
+      height: 12,
+      width: 12,
+      position: "absolute",
+      backgroundColor: "white",
+      zIndex: -1
+    }
+  }
+})(Autocomplete);
+
+const skills = [
+  { title: 'Product Design', type: 'technical' },
+  { title: 'Front End Development', type: 'technical' },
+  { title: 'Education', type: 'technical' },
+  { title: 'UI/UX', type: 'technical' },
+  { title: 'Game Development', type: 'technical' }
+];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -111,5 +207,13 @@ const useStyles = makeStyles((theme) => ({
     borderColor: theme.palette.gray,
     margin: 2
   },
+  checkbox: {
+    '&.MuiIconButton-root': {
+      padding: '4px',
+    },
+    '&.Mui-checked': {
+      color: 'rgba(0, 0, 0, 0.54)',
+    }
+  }
 }));
 

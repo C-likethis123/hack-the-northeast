@@ -7,14 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles, withStyles } from '@material-ui/core/styles';
 import { FilledInput } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AddIcon from '@material-ui/icons/Add';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
 
 export default function HobbiesItem(props) {
   const classes = useStyles();
-  const skills = {recommendedSkills:["Hiking", "Ice Skating", "Reading", "Knitting", "Learning New Language"], selectedSkills: ["Volunteering", "Basketball", "Drawing"]}
   const [preferenceInput, setpreferenceInput] = useState("");
 
   const changepreferenceInput = (event) => setpreferenceInput(event.target.value);
@@ -27,38 +28,46 @@ export default function HobbiesItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>4. HOBBIES- How do you spend your free time? What excites you? (Optional)</Typography>
+          <Typography variant="h3">5. Personality- More about yourself! (Optional)</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
             <div>
-              <form>
-                
-                <FilledInput
-                  className={classes.input}
-                  onChange={changepreferenceInput}
-                  value={preferenceInput}
-                  placeholder="Hiking, Dog Petting, Inventing New Dishes"
-                  disableUnderline
-                  fullWidth
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  }
-                />
-              </form>
+            <Typography variant= "body1" style = {{marginTop: "10px"}}>What are your hobbies? How do you spend your free time?</Typography>
+              <BlueAutoComplete
+                multiple
+                id="tags-standard"
+                options={hobbies}
+                getOptionLabel={(option) => option.title}
+                defaultValue={[hobbies[0]]}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    label="Hobbies"
+                    placeholder="Hiking, Dog Petting, Inventing New Dishes..."
+                  />
+                )}
+              />
             </div>
 
             <div>
-              {skills.recommendedSkills.map(
-              (skill) => <SkillItem style = {classes.greyChipStyle} icon = {<AddIcon/>} skill = {skill}/>)}
-            </div>
-
-            <Typography>This will help employers assess whether you are a good fit at the company.</Typography>
-            <div>
-              {skills.selectedSkills.map(
-              (skill) => <SkillItem style = {classes.greenChipStyle} skill = {skill}/>)}
+            <Typography variant= "body1" style = {{marginTop: "20px"}}>How will your friends describe you?</Typography>
+              <BlueAutoComplete
+                multiple
+                id="tags-standard"
+                options={personalities}
+                getOptionLabel={(option) => option.title}
+                defaultValue={[personalities[0]]}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    label="Personalities"
+                    placeholder="Free-spirited, Meticulous, Vengeful..."
+                  />
+                )}
+              />
             </div>
 
           </div>
@@ -70,6 +79,57 @@ export default function HobbiesItem(props) {
 
 }
 
+
+const BlueAutoComplete = withStyles({
+  tag: {
+    fontWeight: "bold",
+    fontSize: "0.6rem",
+    backgroundColor: "#274690",
+    height: 24,
+    position: "relative",
+    zIndex: 0,
+    
+    "& .MuiChip-label": {
+      color: "#fff"
+    },
+    "& .MuiChip-deleteIcon": {
+      color: "#274690"
+    },
+    "&:after": {
+      content: '""',
+      right: 10,
+      top: 6,
+      height: 12,
+      width: 12,
+      position: "absolute",
+      backgroundColor: "white",
+      zIndex: -1
+    }
+  }
+})(Autocomplete);
+
+const hobbies = [
+  { title: 'Roller Blading', type: 'hobby' },
+  { title: 'Ice Skating', type: 'hobby' },
+  { title: 'Reading', type: 'hobby' },
+  { title: 'Knitting', type: 'hobby' },
+  { title: 'Cycling', type: 'hobby' },
+  { title: 'Basketball', type: 'hobby' },
+  { title: 'Volunteering', type: 'hobby' },
+  { title: 'Drawing', type: 'hobby' }
+];
+
+const personalities = [
+  { title: 'Hardworking', type: 'personality' },
+  { title: 'Motivated', type: 'personality' },
+  { title: 'Funny', type: 'personality' },
+  { title: 'Kind', type: 'personality' },
+  { title: 'Punctual', type: 'personality' },
+  { title: 'Animal Lover', type: 'personality' },
+  { title: 'Free-spirited', type: 'personality' },
+  { title: 'Organised', type: 'personality' },
+  { title: 'Friendly', type: 'personality' }
+];
 
 const useStyles = makeStyles((theme) => ({
   root: {

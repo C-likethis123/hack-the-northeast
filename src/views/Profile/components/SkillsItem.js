@@ -7,17 +7,16 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles, withStyles } from '@material-ui/core/styles';
 import { FilledInput } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AddIcon from '@material-ui/icons/Add';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
+
 
 export default function SkillsItem(props) {
   const classes = useStyles();
-  const skills = {recommendedSkills:["Adobe Illustrator", "Adobe XD", "Teamwork", "Leadership", "Project Manager"], technicalSkills: ["Microsoft Office", "Python", "Photoshop", "JavaScript", "React", "Premiere Pro"], softSkills: ["Communication", "Organisation"]}
-  const [skillInput, setSkillInput] = useState("");
-
-  const changeSkillInput = (event) => setSkillInput(event.target.value);
 
   return (
     <div className="orangeBox">
@@ -27,46 +26,25 @@ export default function SkillsItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>1. SKILLS- Show off your abilities to your employers!</Typography>
+          <Typography variant="h3">2. SKILLS- Show off your abilities to your employers!</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
-            <div>
-              <form>
-                
-                <FilledInput
-                  className={classes.input}
-                  onChange={changeSkillInput}
-                  value={skillInput}
-                  placeholder="Microsoft Office, Python, Teamwork..."
-                  disableUnderline
-                  fullWidth
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  }
+            <BlueAutoComplete
+              multiple
+              id="tags-standard"
+              options={skills}
+              getOptionLabel={(option) => option.title}
+              defaultValue={[skills[0]]}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant="standard"
+                  label="Skills"
+                  placeholder="Python, Photoshop..."
                 />
-              </form>
-            </div>
-
-            <div>
-              {skills.recommendedSkills.map(
-              (skill) => <SkillItem style = {classes.greyChipStyle} icon = {<AddIcon/>} skill = {skill}/>)}
-            </div>
-            
-            <Typography>Technical Skills</Typography>
-
-            <div>
-              {skills.technicalSkills.map(
-              (skill) => <SkillItem style = {classes.blueChipStyle} skill = {skill}/>)}
-            </div>
-
-            <Typography>Soft Skills</Typography>
-            <div>
-              {skills.softSkills.map(
-              (skill) => <SkillItem style = {classes.orangeChipStyle} skill = {skill}/>)}
-            </div>
+              )}
+            />
 
           </div>
         </AccordionDetails>
@@ -120,3 +98,45 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const BlueAutoComplete = withStyles({
+  tag: {
+    fontWeight: "bold",
+    fontSize: "0.6rem",
+    backgroundColor: "#274690",
+    height: 24,
+    position: "relative",
+    zIndex: 0,
+    
+    "& .MuiChip-label": {
+      color: "#fff"
+    },
+    "& .MuiChip-deleteIcon": {
+      color: "#274690"
+    },
+    "&:after": {
+      content: '""',
+      right: 10,
+      top: 6,
+      height: 12,
+      width: 12,
+      position: "absolute",
+      backgroundColor: "white",
+      zIndex: -1
+    }
+  }
+})(Autocomplete);
+
+const skills = [
+  { title: 'Adobe Illustrator', type: 'technical' },
+  { title: 'Adobe XD', type: 'technical' },
+  { title: 'Microsoft Office', type: 'technical' },
+  { title: 'Python', type: 'technical' },
+  { title: 'Photoshop', type: 'technical' },
+  { title: 'JavaScript', type: 'technical' },
+  { title: 'React', type: 'technical' },
+  { title: 'Premiere Pro', type: 'technical' },
+  { title: 'Teamwork', type: 'soft' },
+  { title: 'Project Manager', type: 'soft' },
+  { title: 'Communication', type: 'soft' },
+  { title: 'Organisation', type: 'soft' },
+];

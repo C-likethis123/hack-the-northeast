@@ -16,32 +16,27 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 const options = [
-  { value: 'fulltime', label: 'Full-Time' },
-  { value: 'parttime', label: 'Part-Time' },
-  { value: 'selfemployed', label: 'Self-employed' },
-  { value: 'freelance', label: 'Freelance' },
-  { value: 'contract', label: 'Contract' },
-  { value: 'internship', label: 'Internship' },
-  { value: 'apprenticeship', label: 'Apprenticeship' },
+  { value: 'Associate degree', label: 'Associate degree' },
+  { value: "Bachelor's degree", label: "Bachelor's degree" },
+  { value: "Master's degree", label: "Master's degree" },
+  { value: 'Doctoral degree', label: 'Doctoral degree' },
 ];
 
 
-export default function ExperiencesItem(props) {
+export default function EducationsItem(props) {
   const classes = useStyles();
   const defaultProps = {
     options: options,
     getOptionLabel: (option) => option.label,
   };
 
-  const [companyInput, setCompanyInput] = useState("");
-  const [jobInput, setJobInput] = useState("");
-  const [employmentInput, setEmploymentInput] = useState("");
-  const [descriptionInput, setDescriptionInput] = useState("");
+  const [schoolInput, setSchoolInput] = useState("");
+  const [degreeInput, setDegreeInput] = useState("");
+  const [majorInput, setMajorInput] = useState("");
 
-  const changeCompanyInput = (event) => setCompanyInput(event.target.value);
-  const changeJobInput = (event) => setJobInput(event.target.value);
-  const changeEmploymentInput = (event) => setEmploymentInput(event.value);
-  const changeDescriptionInput = (event) => setDescriptionInput(event.target.value);
+  const changeSchoolInput = (event) => setSchoolInput(event.target.value);
+  const changeDegreeInput = (event) => setDegreeInput(event.target.value);
+  const changeMajorInput = (event) => setMajorInput(event.target.value);
 
   return (
     <div className="orangeBox">
@@ -51,37 +46,40 @@ export default function ExperiencesItem(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography variant="h3">3. EXPERIENCES- What have you been doing before this?</Typography>
+          <Typography variant="h3">1. EDUCATION- Which schools did you attend?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div style={{display:"flex", flexDirection:"column", width: "100%"}}>
             <div>
               <form>
-                <Typography>Current/Most recent employer</Typography>
+                <Typography>Current/Most recent school</Typography>
                 <FilledInput
                   className={classes.input}
-                  onChange={changeCompanyInput}
-                  value={companyInput}
-                  placeholder="Company"
+                  onChange={changeSchoolInput}
+                  value={schoolInput}
+                  placeholder="School Name*"
                   disableUnderline
                   fullWidth
                 />
-                <FilledInput
-                  className={classes.input}
-                  onChange={changeJobInput}
-                  value={jobInput}
-                  placeholder="Job Title"
-                  disableUnderline
-                  fullWidth
-                />
-
                 <Autocomplete
                   {...defaultProps}
                   id="employment"
                   autoComplete
                   includeInputInList
-                  renderInput={(params) => <TextField {...params} label="Employment Type"/>}
+                  renderInput={(params) => <TextField {...params} label="Degree Level Attained/ Will Be Attending"/>}
                 />
+
+                
+                <FilledInput
+                  style = {{marginTop: "10px"}}
+                  className={classes.input}
+                  onChange={changeMajorInput}
+                  value={majorInput}
+                  placeholder="Major, Programme, Practice Area"
+                  disableUnderline
+                  fullWidth
+                />
+
 
                 <div style = {{margin: "10px", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
                   <div style = {{width:"100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
@@ -93,16 +91,6 @@ export default function ExperiencesItem(props) {
                     <input style={{width:"50%", fontSize: "0.6rem"}} type="date" />
                   </div>
                 </div>
-
-                <FilledInput
-                  className={classes.inputDescription}
-                  onChange={changeDescriptionInput}
-                  value={descriptionInput}
-                  placeholder="Description"
-                  disableUnderline
-                  fullWidth
-                  multiline
-                />
 
               </form>
             </div>
