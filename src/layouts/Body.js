@@ -11,7 +11,7 @@ export default function Body() {
   const authenticate = () => setIsAuthenticated(true);
 
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Switch>
         <Route exact path="/" component={SignUp} />
         <Route path="/login" render={props => <Login authenticate={authenticate} />} />
