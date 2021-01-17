@@ -17,9 +17,8 @@ export default function SignUp() {
         <Box className={classes.text}>
           <Typography variant="h1" color="secondary">Welcome Back!</Typography>
           <Typography variant="body2">Find the perfect internship for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec massa augue. Proin aliquam lorem nisi, vitae fermentum tortor posuere id. Mauris interdum ac est id ultrices. </Typography>
-          <Button className={classes.button} variant="contained" color="secondary">
-            <Link to="/login">
-              Sign In</Link>
+          <Button className={classes.button} href="/#/login" variant="contained" color="secondary">
+            Sign In
           </Button>
         </Box>
 
