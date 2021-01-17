@@ -1,19 +1,33 @@
 import React from 'react'
-import Chip from '@material-ui/core/Chip';
-import Avatar from '@material-ui/core/Avatar';
+import { Chip, makeStyles } from '@material-ui/core';
 
 export default function SkillItem(props) {
-  const handleClick = () => {
-  };
-
+  const classes = useStyles();
   return (
     <Chip
-      style = {{"margin": "2px"}}
+      className={`${classes.chip} ${props.type}`}
+      variant="outlined"
       size="small"
-      color="primary"
       label={props.skill}
-      onClick={handleClick}
     />
   )
 }
 
+const useStyles = makeStyles((theme) => ({
+  chip: {
+    padding: '0.8125rem 0.9375rem',
+    marginRight: '4px',
+    "&.skills": {
+      border: `1px solid ${theme.palette.darkblue}`,
+      color: theme.palette.darkblue,
+    },
+    "&.personality": {
+      border: `1px solid ${theme.palette.purple}`,
+      color: theme.palette.purple,
+    },
+    "&.hobbies": {
+      border: `1px solid ${theme.palette.green}`,
+      color: theme.palette.green,
+    }
+  },
+}))
