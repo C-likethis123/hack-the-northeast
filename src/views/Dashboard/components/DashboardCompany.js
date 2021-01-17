@@ -1,8 +1,7 @@
 import React from 'react'
 import InternListItem from "./InternListItem";
-import CatImage from "./images/cat.svg";
-import DogImage from "./images/dog.svg";
-import { Typography, Container, makeStyles } from "@material-ui/core";
+import { Box, Typography, Container, makeStyles } from "@material-ui/core";
+import { Header } from "../../../layouts";
 
 export default function DashboardCompany() {
   const classes = useStyles();
@@ -32,12 +31,16 @@ export default function DashboardCompany() {
   ]
 
   return (
-    <Container className={classes.root}>
-      <Typography color="primary" variant="h1">We've found some interns that we think you'll love!</Typography>
-      <Typography variant="body2">Invite them to apply or contact them for an interview.</Typography>
-      {internList.map(
-        (intern) => <InternListItem {...intern} />)}
-    </Container>
+    <Box>
+      <Header colour="default" />
+      <Container className={classes.root}>
+        <Typography color="primary" variant="h1">We've found some interns that we think you'll love!</Typography>
+        <Typography variant="body2">Invite them to apply or contact them for an interview.</Typography>
+        {internList.map(
+          (intern) => <InternListItem {...intern} />)}
+      </Container>
+    </Box>
+
   )
 }
 

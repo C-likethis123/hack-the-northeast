@@ -13,7 +13,7 @@ export default function Body() {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={SignUp} />
         <Route path="/login" render={props => <Login authenticate={authenticate} />} />
         <Route path="/signup" component={SignUp} />
         <GuardedRoute

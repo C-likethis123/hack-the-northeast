@@ -7,6 +7,7 @@ import { Typography } from "@material-ui/core";
 import EducationsItem from './EducationsItem';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import { Header } from "../../../layouts";
 
 export default function ProfileIntern() {
   const history = useHistory();
@@ -16,19 +17,17 @@ export default function ProfileIntern() {
 
   return (
     <div>
-      <Typography variant="h2" style = {{margin: "30px"}} className="title">Start your internship journey!</Typography>
-      <div>
-        <EducationsItem/>
-        <SkillsItem/>
-        <ExperiencesItem/>
-        <PreferencesItem/>
-        <HobbiesItem/>
-        <div style={{marginTop: "30px", display: "flex", justifyContent:"center"}}>
-          <Button variant="contained" color="primary" onClick={goToDashboard}>Submit</Button>
-        </div>
-
-      </div>
-      <div style = {{height: "100px"}}>
+      <Header colour="default" />
+      <Typography variant="h2" style={{ margin: "30px" }} className="title">
+        Start your internship journey!
+        </Typography>
+      <EducationsItem />
+      <SkillsItem />
+      <ExperiencesItem />
+      <PreferencesItem />
+      <HobbiesItem />
+      <div style={{ marginTop: "30px", display: "flex", justifyContent: "center" }}>
+        <Button variant="contained" color="primary" onClick={goToDashboard}>Submit</Button>
       </div>
     </div>
   )
